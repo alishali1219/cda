@@ -1,16 +1,8 @@
-<!--
-Code copied from: https://learn.uwaterloo.ca/d2l/le/content/1187779/viewContent/6285386/View
-Author: Greg Smith
-Name: 11-grid-demo
-Description: Simple template (I changed most of it though)
-Date retrieved: Dec 4, 2025
--->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Alisha Li's Portfolio</title>
+    <title>Canadian Driving Academy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -76,14 +68,13 @@ Date retrieved: Dec 4, 2025
 
       .navbar {
         width: 100%;
-        background-color: #1C1C1C;
+        background-color: white;
         position: sticky;
         top: 0;
       }
 
       html {
         scroll-padding-top: 130px;
-        /*Prompted ChatGPT asking why my hyperlinks (on the same page) were not fully appearing, gave it some of my code details and it suggested this*/
       }
 
       .navbar-content {
@@ -91,7 +82,6 @@ Date retrieved: Dec 4, 2025
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
-        /*https://www.w3schools.com/cssref/css3_pr_justify-content.php*/
         align-items: center;
       }
 
@@ -115,32 +105,28 @@ Date retrieved: Dec 4, 2025
 
       .nav-link {
         text-decoration: none;
-        color: #10D4FB;
+        color: black;
         font-size: 24px;
         font-family: Nunito, sans-serif;
       }
 
       .nav-link:hover {
-        color: #5F13FD;
+        color: red;
       }
 
-      .nav-link:visited {
-        /*https://www.w3schools.com/html/html_links_colors.asp*/
-        color: #106AFB;
-      }
+.hero {
+  width: 1440px;
+  height: 350px;
+  margin: 0 auto;
+  background-image: url("hero img.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-      .nav-link:active {
-        color: #B49AFF;
-      }
+  display: flex;
+  align-items: center;
+}
 
-      .hero {
-        width: 1440px;
-        height: 350px;
-        background-color: #52B69A;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-      }
 
       .hero-content {
         width: 1200px;
@@ -164,7 +150,6 @@ Date retrieved: Dec 4, 2025
         height: 6px;
         margin: 40px auto;
         background: linear-gradient(to right, #10D4FB, #5F13FD);
-        /*https://www.w3schools.com/css/css3_gradients.asp*/
         border-radius: 4px;
       }
 
@@ -234,7 +219,6 @@ Date retrieved: Dec 4, 2025
       }
 
       .hero-table {
-        /*https://www.w3schools.com/html/html_tables.asp*/
         font-size: 33px;
         font-family: Nunito, sans-serif;
         border-collapse: collapse;
@@ -257,7 +241,7 @@ Date retrieved: Dec 4, 2025
     <div class="main-container">
       <div class="navbar">
         <div class="navbar-content">
-          <img src="personal logo.png" alt="Alisha Li Logo" class="logo" width="120" height="120">
+          <img src="cda-logo.png" alt="CDA Logo" class="logo" width="120" height="120">
           <ul class="nav-links">
             <li><a href="#" class="nav-link">About</a></li>
             <li><a href="#" class="nav-link">Projects</a></li>
