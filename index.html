@@ -39,24 +39,12 @@
         text-align: left;
       }
 
-      ol {
-        font-size: 33px;
-        line-height: 2;
-        font-family: Nunito, sans-serif;
-        text-align: left;
-        padding: 20px;
-      }
-
       ul {
-        font-size: 33px;
+        font-size: 30px;
         line-height: 1.5;
         font-family: Nunito, sans-serif;
         text-align: left;
         padding: 20px;
-      }
-
-      ul li {
-        margin-bottom: 25px;
       }
 
       .main-container {
@@ -88,6 +76,8 @@
       .logo {
         height: 12%;
         width: 12%;
+        padding-bottom: 20px;
+        padding-top: 10px;
       }
 
       .toc-link {
@@ -116,7 +106,7 @@
 
       .hero {
         width: 1440px;
-        height: 350px;
+        height: 450px;
         margin: 0 auto;
         filter: grayscale(100%);
         background-image: url("hero img.png");
@@ -129,6 +119,13 @@
         align-items: center;
       }
 
+      .hero-content h1 {
+        color: white;
+        text-shadow: -2px -2px 0 #000,
+          2px -2px 0 #000,
+          -2px 2px 0 #000,
+          2px 2px 0 #000;
+      }
 
       .hero-content {
         width: 1200px;
@@ -136,34 +133,21 @@
         text-align: center;
       }
 
-      .divider-gradient {
+      .divider {
         width: 1440px;
         height: 6px;
-        margin: 40px auto;
-        background: linear-gradient(to right, #10D4FB, #5F13FD);
-        border-radius: 4px;
-      }
-
-      .divider-reverse-gradient {
-        width: 1440px;
-        height: 6px;
-        margin: 40px auto;
-        background: linear-gradient(to left, #10D4FB, #5F13FD);
+        background: red;
         border-radius: 4px;
       }
 
       .section {
-        width: 1200px;
-        height: auto;
-        margin: 40px auto;
+        width: 100%;
+        margin: 0 auto;
+        padding: 60px 20px;
         display: block;
-        align-items: center;
-        justify-content: center;
-        color: white;
+        background-color: white;
+        color: black;
         font-size: 24px;
-        border-radius: 10px;
-        background-color: transparent;
-        padding: 20px;
       }
 
       .button {
@@ -223,40 +207,33 @@
           <img src="cda-logo.png" alt="CDA Logo" class="logo" width="120" height="120">
           <ul class="nav-links">
             <li><a href="#" class="nav-link">About</a></li>
-            <li><a href="#" class="nav-link">Projects</a></li>
-            <li><a href="https://docs.google.com/document/d/1BhlfwDV00OhXJhnAbEnIIv7aJG2-8LD1X-_DnT-9v4Y/edit?tab=t.0" class="nav-link" target="_blank">Resume</a></li>
-            <li><a href="mailto:a537li@uwaterloo.ca" class="nav-link">Contact</a></li>
+            <li><a href="#" class="nav-link">Services</a></li>
+            <li><a href="#" class="nav-link">Testimonials</a></li>
+            <li><a href="#" class="nav-link">Contact</a></li>
+            <li><a href="#" class="nav-link">中文</a></li>
           </ul>
         </div>
       </div>
 
       <div class="hero">
         <div class="hero-content">
-            <h1>MTO Approved Driving School</h1>
-          </div>
+          <h1>MTO Approved Driving School</h1>
         </div>
       </div>
 
       <div class="section">
-        <h2>Table of Contents</h2>
-        <ol>
-          <li><a href="#problem" class="toc-link">The Problem</a></li>
-          <li><a href="#solution" class="toc-link">The Solution</a></li>
-          <li><a href="#reflection" class="toc-link">Reflection</a></li>
-          <li><a href="#impact" class="toc-link">Impact</a></li>
-          <li><a href="#takeaways" class="toc-link">Key Takeaways</a></li>
-        </ol>
+        <h2>Why Choose Us?</h2>
         <p>The uXperience Design-a-thon, hosted by UW Stratford and SunLife, challenged teams to address financial stress among millennials. So, my team and I designed Island Funds, a gamified app that helps users build healthy money habits through collaborative goal-setting and personalized financial literacy.</p>
       </div>
 
-      <div class="divider-gradient"></div>
+      <div class="divider"></div>
 
       <div class="section" id="problem">
         <h2>The Problem</h2>
         <p>For many millennials, managing money feels overwhelming. Financial advice is often confusing, resources are scattered, and there's little motivation to stay on track. Despite growing stress around debt and saving, there’s no accessible platform that makes financial literacy engaging, social, and easy to stick with.</p>
       </div>
 
-      <div class="divider-reverse-gradient"></div>
+      <div class="divider"></div>
 
       <div class="section" id="solution">
         <h2>The Solution</h2>
@@ -290,7 +267,7 @@
         </div>
       </div>
 
-      <div class="divider-gradient"></div>
+      <div class="divider"></div>
 
       <div class="section" id="reflection">
         <h2>Reflection</h2>
@@ -304,14 +281,14 @@
         <p>This project helped me understand that creating a gamified financial tool is not just about good UI and engaging interactions. It is also about designing systems that build trust, adapt to changing needs, and provide the right incentives to keep users motivated long-term.</p>
       </div>
 
-      <div class="divider-reverse-gradient"></div>
+      <div class="divider"></div>
 
       <div class="section" id="impact">
         <h2>Impact</h2>
         <p>Although this project was created during a short design-a-thon sprint and did not go through development, it still had a meaningful impact on my growth as a designer. I practiced creating engaging financial literacy experiences, explored ways to gamify saving habits for millennials, and learned how to connect personal finance goals with collaborative community challenges. The process helped me strengthen my skills in UX research, rapid prototyping, and designing for user motivation. Most importantly, it inspired me to think about how design can make financial management feel approachable, empowering, and even fun.</p>
       </div>
 
-      <div class="divider-gradient"></div>
+      <div class="divider"></div>
 
       <div class="section" id="takeaways">
         <div class="takeaway">
