@@ -21,27 +21,27 @@
 
       h2 {
         font-family: Raleway, sans-serif;
-        font-size: 50px;
+        font-size: 48px;
         margin-bottom: 50px;
         text-align: center;
       }
 
       h3 {
-        font-size: 39px;
+        font-size: 36px;
         line-height: 1.5;
         font-family: Nunito, sans-serif;
       }
 
       p {
-        font-size: 33px;
+        font-size: 24px;
         line-height: 1.5;
         font-family: Nunito, sans-serif;
         text-align: left;
       }
 
       ul {
-        font-size: 30px;
-        line-height: 2;
+        font-size: 24px;
+        line-height: 2.5;
         font-family: Nunito, sans-serif;
         text-align: center;
         list-style-type: none;
@@ -190,18 +190,126 @@
         display: flex;
         justify-content: center;
         margin: 0 auto;
+        gap: 10px;
+        grid-template-columns: 33% 33% 33%;
       }
 
       .grid-item {
         align-items: center;
-        width: 285px;
-        height: 581px;
-        padding: 5px;
+        width: 375px;
+        height: auto;
+        padding: 20px;
+        border: 3px solid white;
+      }
+
+      .grid-item ul {
+        text-align: left;
+        line-height: 2;
+        font-size: 24px;
+        list-style-type: disc;
+        padding-left: 20px;
+      }
+
+      .grid-item h3 {
+        text-align: center;
+        padding-bottom: 20px;
+        padding-top: 30px;
+      }
+
+      .grid-item p {
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 30px;
       }
 
       .takeaway {
         margin-bottom: 50px;
       }
+
+/* Testimonials carousel – styled version */
+
+.testimonial-carousel {
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  font-family: Nunito, sans-serif;
+}
+
+.testimonial-carousel input {
+  display: none;
+}
+
+.testimonial-slide {
+  display: none;
+  background-color: #222;
+  color: white;
+  padding: 80px 100px;
+  border: 6px solid red;
+  position: relative;
+  min-height: 350px;
+}
+
+/* show slide */
+#test1:checked ~ .slides #slide1,
+#test2:checked ~ .slides #slide2,
+#test3:checked ~ .slides #slide3 {
+  display: block;
+}
+
+/* quotation marks */
+.quote-open {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  font-size: 80px;
+  color: white;
+}
+
+.quote-close {
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+  font-size: 80px;
+  color: white;
+}
+
+/* testimonial text */
+.testimonial-text {
+  font-size: 22px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* author */
+.testimonial-author {
+  position: absolute;
+  bottom: 30px;
+  right: 80px;
+  font-style: italic;
+  font-size: 22px;
+}
+
+/* arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  cursor: pointer;
+  color: black;
+  background: white;
+  border-radius: 50%;
+  padding: 5px 12px;
+}
+
+.arrow.left {
+  left: -60px;
+}
+
+.arrow.right {
+  right: -60px;
+}
+
 
       img {
         width: 100%;
@@ -246,58 +354,112 @@
 
       <div class="divider"></div>
 
-      <div class="section1" id="problem">
+      <div class="section1" id="services">
         <h2>Services</h2>
-        <p>For many millennials, managing money feels overwhelming. Financial advice is often confusing, resources are scattered, and there's little motivation to stay on track. Despite growing stress around debt and saving, there’s no accessible platform that makes financial literacy engaging, social, and easy to stick with.</p>
-      </div>
-
-      <div class="divider"></div>
-
-      <div class="section" id="solution">
-        <h2>The Solution</h2>
-        <p>Introducing Island Funds, the app we designed to help millennials manage financial stress and build financial literacy through gamified, collaborative experiences that make learning about money engaging and approachable.</p>
-        <a href="https://www.figma.com/design/A6r0m0RbboRCkz4Z3Dei9N/SunLife-Design-a-thon?node-id=0-1&p=f&t=y7t1vtJ3krTHOxUz-0" target="_blank" class="button">View in Figma</a>
-        <h3>Screens</h3>
-        <div class="container4">
-          <div class="grid-item">
-            <img src="Home.png" alt="Mockup home screen">
-          </div>
-          <div class="grid-item">
-            <img src="Create Island.png" alt="Create island mockup">
-          </div>
-          <div class="grid-item">
-            <img src="Choose Topic.png" alt="Choose topic mockup">
-          </div>
-          <div class="grid-item">
-            <img src="Topic Overview.png" alt="Topic overview mockup">
-          </div>
-        </div>
         <div class="container3">
           <div class="grid-item">
-            <img src="Set Your Goal.png" alt="Set your goal page">
+            <h3>In-Vehicle Training</h3>
+            <ul>
+              <li>G2: <b>$60/hr</b></li>
+              <li>G License Lessons</li>
+              <ul>
+                <li>Returning Students: <b>$60/hr</b></li>
+                <li>New Students: <b>$70/hr</b></li>
+              </ul>
+            </ul>
+            <p>
+              <b>Tax included</b> for all prices listed above
+            </p>
           </div>
           <div class="grid-item">
-            <img src="Goal Set.png" alt="Goal set confirmation">
+            <h3>Road Tests</h3>
+            <ul>
+              <li><b>60 mins</b> of in-car lessons</li>
+              <li>Car rental for road tests</li>
+              <p></p>
+              <p></p>
+              <p></p>
+            </ul>
+            <p>
+              Road tests cost <b>$220</b> each
+            </p>
           </div>
           <div class="grid-item">
-            <img src="Progress.png" alt="Goal progress">
+            <h3>Full Course ($820)</h3>
+            <ul>
+              <li><b>10 hrs</b> of in-vehicle lessons</li>
+              <li><b>10 hrs</b> of Homelink</li>
+              <li><b>20 hrs</b> online</li>
+              <li>1-on-1 in-vehicle training</li>
+              <li>Free pick up/drop off in Kitchener-Waterloo</li>
+            </ul>
           </div>
         </div>
       </div>
 
       <div class="divider"></div>
 
-      <div class="section" id="reflection">
-        <h2>Reflection</h2>
-        <p>Upon reflection, I realized that our initial design for Island Funds focused heavily on the ideal user journey, where users are motivated to set goals, track progress, and explore financial literacy resources regularly, and overlooked some real-world challenges that could impact adoption and sustained engagement. Here are a few areas that I believe need further development:</p>
-        <ul>
-          <li><b>Adoption and motivation:</b> While gamification and social features encourage participation, attracting an initial user base may require partnerships with schools, employers, or financial institutions. Early-stage campaigns, incentives, or integrations with existing platforms could help drive engagement.</li>
-          <li><b>Personalization depth:</b> The current onboarding process tailors content to a user’s stated needs, but financial situations can change quickly. Adding adaptive recommendations that respond to life events, like job changes, unexpected expenses, or new savings goals, would make the app more relevant over time.</li>
-          <li><b>Collaboration features:</b> Group goals encourage social accountability, but they also introduce challenges such as varying commitment levels and coordination across schedules. Tools for role assignments, reminders, and progress visibility would make teamwork smoother and more effective.</li>
-          <li><b>Education and accessibility:</b> Some users may lack basic financial knowledge, while others may already be advanced. Including tiered learning resources, beginner-friendly explanations, and interactive modules could make the platform more inclusive and useful for a wider audience.</li>
-        </ul>
-        <p>This project helped me understand that creating a gamified financial tool is not just about good UI and engaging interactions. It is also about designing systems that build trust, adapt to changing needs, and provide the right incentives to keep users motivated long-term.</p>
+     <div class="section" id="testimonials">
+  <h2>Testimonials</h2>
+
+  <div class="testimonial-carousel">
+
+    <!-- radio buttons -->
+    <input type="radio" name="testimonial" id="test1" checked>
+    <input type="radio" name="testimonial" id="test2">
+    <input type="radio" name="testimonial" id="test3">
+
+    <!-- slides -->
+    <div class="slides">
+
+      <div class="testimonial-slide" id="slide1">
+        <div class="quote-open">“</div>
+
+        <p class="testimonial-text">
+          Really enjoyed my time here with CDA driving instructor.
+          They explain everything with a lot of detail, very hard to
+          get confused but very easy to gain great success. Thanks to
+          them I have my license without any mistakes or accidents.
+          Thank you Canadian Driving Academy.
+        </p>
+
+        <div class="quote-close">”</div>
+        <div class="testimonial-author">- Yusuf Noorrah</div>
       </div>
+
+      <div class="testimonial-slide" id="slide2">
+        <div class="quote-open">“</div>
+
+        <p class="testimonial-text">
+          My instructor was calm, patient, and extremely knowledgeable.
+          I felt confident and prepared for my road test.
+        </p>
+
+        <div class="quote-close">”</div>
+        <div class="testimonial-author">- Sarah K.</div>
+      </div>
+
+      <div class="testimonial-slide" id="slide3">
+        <div class="quote-open">“</div>
+
+        <p class="testimonial-text">
+          Flexible scheduling and clear explanations made learning to
+          drive stress-free and enjoyable.
+        </p>
+
+        <div class="quote-close">”</div>
+        <div class="testimonial-author">- Daniel M.</div>
+      </div>
+
+    </div>
+
+    <!-- arrows -->
+    <label for="test1" class="arrow left">‹</label>
+    <label for="test2" class="arrow right">›</label>
+
+  </div>
+</div>
+
 
       <div class="divider"></div>
 
