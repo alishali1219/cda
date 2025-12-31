@@ -59,6 +59,7 @@
         background-color: white;
         position: sticky;
         top: 0;
+        z-index: 9999;
       }
 
       html {
@@ -155,7 +156,7 @@
         margin: 0 auto;
         padding: 60px 20px;
         display: block;
-        background-color: #222222;
+        background-color: #353535;
         color: white;
         font-size: 24px;
       }
@@ -226,94 +227,107 @@
         margin-bottom: 50px;
       }
 
-/* Testimonials carousel – styled version */
+      .testimonial-carousel {
+        width: 1000px;
+        margin: 0 auto;
+        position: relative;
+        font-family: Nunito, sans-serif;
+      }
 
-.testimonial-carousel {
-  width: 1000px;
-  margin: 0 auto;
-  position: relative;
-  font-family: Nunito, sans-serif;
-}
+      .testimonial-carousel input {
+        display: none;
+      }
 
-.testimonial-carousel input {
-  display: none;
-}
+      .testimonial-slide {
+        display: none;
+        background-color: #222;
+        color: white;
+        padding: 80px 100px;
+        border: 6px solid red;
+        position: relative;
+        min-height: 350px;
+      }
 
-.testimonial-slide {
-  display: none;
-  background-color: #222;
-  color: white;
-  padding: 80px 100px;
-  border: 6px solid red;
-  position: relative;
-  min-height: 350px;
-}
+      #test1:checked~.slides #slide1,
+      #test2:checked~.slides #slide2,
+      #test3:checked~.slides #slide3 {
+        display: block;
+      }
 
-/* show slide */
-#test1:checked ~ .slides #slide1,
-#test2:checked ~ .slides #slide2,
-#test3:checked ~ .slides #slide3 {
-  display: block;
-}
+      .quote-open {
+        position: absolute;
+        top: 30px;
+        left: 40px;
+        font-size: 80px;
+        color: white;
+      }
 
-/* quotation marks */
-.quote-open {
-  position: absolute;
-  top: 30px;
-  left: 40px;
-  font-size: 80px;
-  color: white;
-}
+      .quote-close {
+        position: absolute;
+        bottom: 60px;
+        right: 60px;
+        font-size: 80px;
+        color: white;
+      }
 
-.quote-close {
-  position: absolute;
-  bottom: 60px;
-  right: 60px;
-  font-size: 80px;
-  color: white;
-}
+      .testimonial-text {
+        font-size: 24px;
+        line-height: 1.6;
+        text-align: left;
+      }
 
-/* testimonial text */
-.testimonial-text {
-  font-size: 22px;
-  line-height: 1.6;
-  text-align: left;
-}
+      .testimonial-author {
+        position: absolute;
+        bottom: 30px;
+        right: 80px;
+        font-style: italic;
+        font-size: 24px;
+      }
 
-/* author */
-.testimonial-author {
-  position: absolute;
-  bottom: 30px;
-  right: 80px;
-  font-style: italic;
-  font-size: 22px;
-}
+      .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 80px;
+        cursor: pointer;
+        color: black;
+        background: white;
+        border-radius: 50%;
+        padding: 5px 12px;
+      }
 
-/* arrows */
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 40px;
-  cursor: pointer;
-  color: black;
-  background: white;
-  border-radius: 50%;
-  padding: 5px 12px;
-}
+      .arrow.left {
+        left: -60px;
+      }
 
-.arrow.left {
-  left: -60px;
-}
-
-.arrow.right {
-  right: -60px;
-}
-
+      .arrow.right {
+        right: -60px;
+      }
 
       img {
         width: 100%;
         height: 100%;
+      }
+
+      .about-content {
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .about-image {
+        width: 20%;
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+      }
+
+      .about-text {
+        width: 80%;
       }
     </style>
   </head>
@@ -399,74 +413,86 @@
 
       <div class="divider"></div>
 
-     <div class="section" id="testimonials">
-  <h2>Testimonials</h2>
+      <div class="section" id="testimonials">
+        <h2>Testimonials</h2>
 
-  <div class="testimonial-carousel">
+        <div class="testimonial-carousel">
 
-    <!-- radio buttons -->
-    <input type="radio" name="testimonial" id="test1" checked>
-    <input type="radio" name="testimonial" id="test2">
-    <input type="radio" name="testimonial" id="test3">
+          <input type="radio" name="testimonial" id="test1" checked>
+          <input type="radio" name="testimonial" id="test2">
+          <input type="radio" name="testimonial" id="test3">
 
-    <!-- slides -->
-    <div class="slides">
+          <div class="slides">
 
-      <div class="testimonial-slide" id="slide1">
-        <div class="quote-open">“</div>
+            <div class="testimonial-slide" id="slide1">
+              <div class="quote-open">“</div>
 
-        <p class="testimonial-text">
-          Really enjoyed my time here with CDA driving instructor.
-          They explain everything with a lot of detail, very hard to
-          get confused but very easy to gain great success. Thanks to
-          them I have my license without any mistakes or accidents.
-          Thank you Canadian Driving Academy.
-        </p>
+              <p class="testimonial-text">
+                Really enjoyed my time here with CDA driving instructor.
+                They explain everything with a lot of detail, very hard to
+                get confused but very easy to gain great success. Thanks to
+                them I have my license without any mistakes or accidents.
+                Thank you Canadian Driving Academy.
+              </p>
 
-        <div class="quote-close">”</div>
-        <div class="testimonial-author">- Yusuf Noorrah</div>
+              <div class="quote-close">”</div>
+              <div class="testimonial-author">- Yusuf Noorrah</div>
+            </div>
+
+            <div class="testimonial-slide" id="slide2">
+              <div class="quote-open">“</div>
+
+              <p class="testimonial-text">
+                Thank you so much for all the patience and great guidance during my driving lessons. You made driving fun and easy to learn, and all the tips and tricks you gave me were very helpful. From the first lesson I knew you had every students' best interest and you made every minute count. Now I have more confidence on the road, all thanks to you.
+              </p>
+
+              <div class="quote-close">”</div>
+              <div class="testimonial-author">- Olivia</div>
+            </div>
+
+            <div class="testimonial-slide" id="slide3">
+              <div class="quote-open">“</div>
+
+              <p class="testimonial-text">
+                William took his G2 test to day HE PASSED... WHO HOOO.. I thank you guys very much for providing awesome in class and in car driving has been the best for teaching both my boys behind the wheel. I am very pleased and i would certainly recommend Canadian Driving Academy to anyone.
+              </p>
+
+              <div class="quote-close">”</div>
+              <div class="testimonial-author">- William.</div>
+            </div>
+          </div>
+
+          <label for="test1" class="arrow left">‹</label>
+          <label for="test2" class="arrow right">›</label>
+
+        </div>
       </div>
-
-      <div class="testimonial-slide" id="slide2">
-        <div class="quote-open">“</div>
-
-        <p class="testimonial-text">
-          My instructor was calm, patient, and extremely knowledgeable.
-          I felt confident and prepared for my road test.
-        </p>
-
-        <div class="quote-close">”</div>
-        <div class="testimonial-author">- Sarah K.</div>
-      </div>
-
-      <div class="testimonial-slide" id="slide3">
-        <div class="quote-open">“</div>
-
-        <p class="testimonial-text">
-          Flexible scheduling and clear explanations made learning to
-          drive stress-free and enjoyable.
-        </p>
-
-        <div class="quote-close">”</div>
-        <div class="testimonial-author">- Daniel M.</div>
-      </div>
-
-    </div>
-
-    <!-- arrows -->
-    <label for="test1" class="arrow left">‹</label>
-    <label for="test2" class="arrow right">›</label>
-
-  </div>
-</div>
 
 
       <div class="divider"></div>
 
-      <div class="section" id="impact">
-        <h2>Impact</h2>
-        <p>Although this project was created during a short design-a-thon sprint and did not go through development, it still had a meaningful impact on my growth as a designer. I practiced creating engaging financial literacy experiences, explored ways to gamify saving habits for millennials, and learned how to connect personal finance goals with collaborative community challenges. The process helped me strengthen my skills in UX research, rapid prototyping, and designing for user motivation. Most importantly, it inspired me to think about how design can make financial management feel approachable, empowering, and even fun.</p>
+      <div class="section1" id="about">
+        <h2>About Us</h2>
+
+        <div class="about-content">
+          <div class="about-image">
+            <img src="cda-logo.png" alt="Canadian Driving Academy logo">
+          </div>
+
+          <div class="about-text">
+            <p>
+              Canadian Driving Academy provides Ministry Approved Driving Education
+              Courses to all students. We provide our students with fully qualified
+              instructors who are patient, professional and knowledgeable.
+            </p>
+            <p>
+              Our instructors will prepare you for a lifetime of safe driving and
+              ensure that you have the confidence to drive defensively and responsibly.
+            </p>
+          </div>
+        </div>
       </div>
+
 
       <div class="divider"></div>
 
