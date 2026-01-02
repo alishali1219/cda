@@ -329,9 +329,31 @@
       .about-text {
         width: 70%;
       }
-      
+
       #contact p {
         margin-bottom: 20px;
+      }
+
+      .contact-content {
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .contact-text {
+        width: 60%;
+      }
+
+      .contact-image {
+        width: 40%;
+      }
+
+      .contact-image img {
+        width: 80%;
+        height: auto;
+        border-radius: 10px;
       }
       
     </style>
@@ -502,10 +524,21 @@
       <div class="divider"></div>
 
       <div class="section" id="contact">
-          <h2>Contact Us</h2>
-          <p><b>Email: </b><a href="mailto:Canadiandrivingacademy@gmail.com">Canadiandrivingacademy@gmail.com</a></p>
-          <p><b>Phone: </b>226-600-0836</p>
-          <p><b>WeChat ID: </b> CanadianDA</p>
+        <h2>Contact Us</h2>
+
+        <div class="contact-content">
+          <div class="contact-text">
+            <p><b>Email:</b>
+              <a href="mailto:Canadiandrivingacademy@gmail.com">Canadiandrivingacademy@gmail.com</a>
+            </p>
+            <p><b>Phone:</b> 226-600-0836</p>
+            <p><b>WeChat ID:</b> CanadianDA</p>
+          </div>
+
+          <div class="contact-image">
+            <img src="contact-us.jpeg" alt="Person driving">
+          </div>
+        </div>
       </div>
     </div>
   </body>
