@@ -109,15 +109,32 @@
         width: 1440px;
         height: 450px;
         margin: 0 auto;
-        filter: grayscale(100%);
-        background-image: url("hero img.png");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden;
 
         display: flex;
         justify-content: center;
         align-items: center;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("hero img.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: grayscale(100%);
+        z-index: 0;
+      }
+
+      .hero-content {
+        width: 1200px;
+        color: white;
+        text-align: center;
+        position: relative;
+        z-index: 1;
       }
 
       .hero-content h1 {
@@ -128,17 +145,10 @@
           2px 2px 0 #000;
       }
 
-      .hero-content {
-        width: 1200px;
-        color: white;
-        text-align: center;
-      }
-
       .divider {
         width: 1440px;
         height: 6px;
         background: red;
-        border-radius: 4px;
       }
 
       .section {
@@ -164,20 +174,26 @@
       .button {
         display: block;
         width: max-content;
-        margin: 20px auto 0 auto;
-        padding: 15px 30px;
-        background-color: transparent;
+        margin: 40px auto 0 auto;
+        padding: 15px 40px;
+        background-color: black;
         color: white;
         text-decoration: none;
         font-size: 24px;
         font-family: Nunito, sans-serif;
-        border: 3px solid #10D4FB;
+        border: 5px solid red;
         border-radius: 50px;
         text-align: center;
+        transition: background-color 0.3s ease, color 0.3s ease;
       }
 
       .button:hover {
-        border: 3px solid #5F13FD;
+        background-color: red;
+        color: white;
+      }
+
+      #contact .button {
+        margin: 30px auto 0 auto;
       }
 
       .container4 {
@@ -324,6 +340,7 @@
       .about-image img {
         width: 100%;
         height: auto;
+        border-radius: 10px;
       }
 
       .about-text {
@@ -351,11 +368,10 @@
       }
 
       .contact-image img {
-        width: 80%;
+        width: 70%;
         height: auto;
         border-radius: 10px;
       }
-      
     </style>
   </head>
 
@@ -377,6 +393,10 @@
       <div class="hero">
         <div class="hero-content">
           <h1>MTO Approved Driving School</h1>
+
+          <a href="#contact" class="button">
+            Book a Lesson
+          </a>
         </div>
       </div>
 
@@ -533,6 +553,10 @@
             </p>
             <p><b>Phone:</b> 226-600-0836</p>
             <p><b>WeChat ID:</b> CanadianDA</p>
+
+            <a href="mailto:Canadiandrivingacademy@gmail.com" class="button">
+              Book a Lesson
+            </a>
           </div>
 
           <div class="contact-image">
