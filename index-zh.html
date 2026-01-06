@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,44 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
 
-      h1 {
-        font-family: Raleway, sans-serif;
-        font-size: 64px;
-      }
+      h1 { font-family: Raleway, sans-serif; font-size: 64px; }
+      h2 { font-family: Raleway, sans-serif; font-size: 48px; margin-bottom: 50px; text-align: center; }
+      h3 { font-size: 36px; line-height: 1.5; font-family: Nunito, sans-serif; }
 
-      h2 {
-        font-family: Raleway, sans-serif;
-        font-size: 48px;
-        margin-bottom: 50px;
-        text-align: center;
-      }
-
-      h3 {
-        font-size: 36px;
-        line-height: 1.5;
-        font-family: Nunito, sans-serif;
-      }
-
-      p {
-        font-size: 24px;
-        line-height: 1.5;
-        font-family: Nunito, sans-serif;
-        text-align: left;
-      }
-
-      ul {
-        font-size: 24px;
-        line-height: 2.5;
-        font-family: Nunito, sans-serif;
-        text-align: center;
-        list-style-type: none;
-      }
+      p { font-size: 24px; line-height: 1.5; font-family: Nunito, sans-serif; text-align: left; }
+      ul { font-size: 24px; line-height: 2.5; font-family: Nunito, sans-serif; text-align: center; list-style-type: none; }
 
       .main-container {
         width: 1440px;
@@ -63,9 +33,7 @@
         z-index: 9999;
       }
 
-      html {
-        scroll-padding-top: 130px;
-      }
+      html { scroll-padding-top: 130px; }
 
       .navbar-content {
         width: 1200px;
@@ -75,40 +43,12 @@
         align-items: center;
       }
 
-      .logo {
-        height: 12%;
-        width: 12%;
-        padding-bottom: 20px;
-        padding-top: 10px;
-      }
+      .logo { height: 12%; width: 12%; padding-bottom: 20px; padding-top: 10px; }
 
-      .toc-link {
-        text-decoration: underline;
-        color: white;
-        font-size: 33px;
-        font-family: Nunito, sans-serif;
-      }
+      .nav-links { list-style: none; display: flex; gap: 40px; }
+      .nav-link { text-decoration: none; color: black; font-size: 24px; font-family: Nunito, sans-serif; }
+      .nav-link:hover { color: red; }
 
-      .nav-links {
-        list-style: none;
-        display: flex;
-        gap: 40px;
-      }
-
-      .nav-link {
-        text-decoration: none;
-        color: black;
-        font-size: 24px;
-        font-family: Nunito, sans-serif;
-      }
-
-      .nav-link:hover {
-        color: red;
-      }
-
-      /* -----------------------------
-         HAMBURGER (DESKTOP HIDDEN)
-      ------------------------------*/
       .hamburger {
         display: none;
         cursor: pointer;
@@ -132,7 +72,6 @@
         margin: 0 auto;
         position: relative;
         overflow: hidden;
-
         display: flex;
         justify-content: center;
         align-items: center;
@@ -166,11 +105,7 @@
           2px 2px 0 #000;
       }
 
-      .divider {
-        width: 1440px;
-        height: 6px;
-        background: red;
-      }
+      .divider { width: 1440px; height: 6px; background: red; }
 
       .section {
         width: 100%;
@@ -208,21 +143,8 @@
         transition: background-color 0.3s ease, color 0.3s ease;
       }
 
-      .button:hover {
-        background-color: #8f3c39;
-        color: white;
-      }
-
-      #contact .button {
-        margin: 30px auto 0 auto;
-      }
-
-      .container4 {
-        display: grid;
-        grid-template-columns: 24% 24% 24% 24%;
-        gap: 7px;
-        margin: 0 auto;
-      }
+      .button:hover { background-color: #8f3c39; color: white; }
+      #contact .button { margin: 30px auto 0 auto; }
 
       .container3 {
         display: flex;
@@ -248,21 +170,8 @@
         padding-left: 20px;
       }
 
-      .grid-item h3 {
-        text-align: center;
-        padding-bottom: 20px;
-        padding-top: 30px;
-      }
-
-      .grid-item p {
-        text-align: center;
-        padding-top: 20px;
-        padding-bottom: 30px;
-      }
-
-      .takeaway {
-        margin-bottom: 50px;
-      }
+      .grid-item h3 { text-align: center; padding-bottom: 20px; padding-top: 30px; }
+      .grid-item p { text-align: center; padding-top: 20px; padding-bottom: 30px; }
 
       .testimonial-carousel {
         width: 1000px;
@@ -271,9 +180,7 @@
         font-family: Nunito, sans-serif;
       }
 
-      .testimonial-carousel input {
-        display: none;
-      }
+      .testimonial-carousel input { display: none; }
 
       .testimonial-slide {
         display: none;
@@ -287,39 +194,13 @@
 
       #test1:checked~.slides #slide1,
       #test2:checked~.slides #slide2,
-      #test3:checked~.slides #slide3 {
-        display: block;
-      }
+      #test3:checked~.slides #slide3 { display: block; }
 
-      .quote-open {
-        position: absolute;
-        top: 30px;
-        left: 40px;
-        font-size: 80px;
-        color: white;
-      }
+      .quote-open { position: absolute; top: 30px; left: 40px; font-size: 80px; color: white; }
+      .quote-close { position: absolute; bottom: 60px; right: 60px; font-size: 80px; color: white; }
 
-      .quote-close {
-        position: absolute;
-        bottom: 60px;
-        right: 60px;
-        font-size: 80px;
-        color: white;
-      }
-
-      .testimonial-text {
-        font-size: 24px;
-        line-height: 1.6;
-        text-align: left;
-      }
-
-      .testimonial-author {
-        position: absolute;
-        bottom: 30px;
-        right: 80px;
-        font-style: italic;
-        font-size: 24px;
-      }
+      .testimonial-text { font-size: 24px; line-height: 1.6; text-align: left; }
+      .testimonial-author { position: absolute; bottom: 30px; right: 80px; font-style: italic; font-size: 24px; }
 
       .arrow {
         position: absolute;
@@ -333,18 +214,10 @@
         padding: 5px 12px;
       }
 
-      .arrow.left {
-        left: -60px;
-      }
+      .arrow.left { left: -60px; }
+      .arrow.right { right: -60px; }
 
-      .arrow.right {
-        right: -60px;
-      }
-
-      img {
-        width: 100%;
-        height: 100%;
-      }
+      img { width: 100%; height: 100%; }
 
       .about-content {
         width: 1200px;
@@ -354,23 +227,11 @@
         align-items: center;
       }
 
-      .about-image {
-        width: 30%;
-      }
+      .about-image { width: 30%; }
+      .about-image img { width: 100%; height: auto; border-radius: 10px; }
+      .about-text { width: 70%; }
 
-      .about-image img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-      }
-
-      .about-text {
-        width: 70%;
-      }
-
-      #contact p {
-        margin-bottom: 20px;
-      }
+      #contact p { margin-bottom: 20px; }
 
       .contact-content {
         width: 1200px;
@@ -380,34 +241,14 @@
         align-items: center;
       }
 
-      .contact-text {
-        width: 60%;
-      }
+      .contact-text { width: 60%; }
+      .contact-image { width: 40%; }
+      .contact-image img { width: 70%; height: auto; border-radius: 10px; }
 
-      .contact-image {
-        width: 40%;
-      }
-
-      .contact-image img {
-        width: 70%;
-        height: auto;
-        border-radius: 10px;
-      }
-
-      /* -----------------------------
-         MOBILE NAV DROPDOWN
-      ------------------------------*/
       @media (max-width: 900px) {
-        .navbar-content {
-          width: 100%;
-          padding: 0 20px;
-          flex-wrap: wrap;
-        }
+        .navbar-content { width: 100%; padding: 0 20px; flex-wrap: wrap; }
 
-        .hamburger {
-          display: block;
-          margin-left: auto;
-        }
+        .hamburger { display: block; margin-left: auto; }
 
         .nav-links {
           display: none;
@@ -419,13 +260,8 @@
           border-top: 2px solid red;
         }
 
-        .nav-links.open {
-          display: flex;
-        }
-
-        .nav-links li {
-          width: 100%;
-        }
+        .nav-links.open { display: flex; }
+        .nav-links li { width: 100%; }
 
         .nav-link {
           display: block;
@@ -434,38 +270,14 @@
           font-size: 20px;
         }
 
-        .nav-link:hover {
-          background: #f2f2f2;
-          color: black;
-        }
+        .nav-link:hover { background: #f2f2f2; color: black; }
 
-        .hero,
-        .divider {
-          width: 100%;
-        }
+        .hero, .divider { width: 100%; }
+        .hero-content, .about-content, .contact-content { width: 100%; padding: 0 20px; }
 
-        .hero-content,
-        .about-content,
-        .contact-content {
-          width: 100%;
-          padding: 0 20px;
-        }
-
-        .about-content,
-        .contact-content {
-          flex-direction: column;
-        }
-
-        .about-image,
-        .about-text,
-        .contact-text,
-        .contact-image {
-          width: 100%;
-        }
-
-        .contact-image img {
-          width: 100%;
-        }
+        .about-content, .contact-content { flex-direction: column; }
+        .about-image, .about-text, .contact-text, .contact-image { width: 100%; }
+        .contact-image img { width: 100%; }
       }
     </style>
   </head>
@@ -476,85 +288,83 @@
         <div class="navbar-content">
           <img src="cda-logo.png" alt="CDA Logo" class="logo" width="120" height="120">
 
-          <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <button class="hamburger" id="hamburger" title="菜单">
             <span></span>
             <span></span>
             <span></span>
           </button>
 
           <ul class="nav-links" id="navLinks">
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#services" class="nav-link">Services</a></li>
-            <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-            <li><a href="index-zh.html" class="nav-link">中文</a></li>
+            <li><a href="#about" class="nav-link">关于我们</a></li>
+            <li><a href="#services" class="nav-link">服务项目</a></li>
+            <li><a href="#testimonials" class="nav-link">学员评价</a></li>
+            <li><a href="#contact" class="nav-link">联系我们</a></li>
+            <li><a href="index.html" class="nav-link">EN</a></li>
           </ul>
         </div>
       </div>
 
       <div class="hero">
         <div class="hero-content">
-          <h1>MTO Approved Driving School</h1>
+          <h1>安省认证驾驶学校</h1>
 
           <a href="#contact" class="button">
-            Book a Lesson
+            预约课程
           </a>
         </div>
       </div>
 
       <div class="section">
-        <h2>Why Choose Us?</h2>
+        <h2>为什么选择我们？</h2>
         <ul>
-          <li>✅ Automatic Cars Only → No stick-shift stress!</li>
-          <li>📍 Pick-Up/Drop-Off Anywhere in KW → We come to you</li>
-          <li>💳 M.T.O Approved = Insurance Discounts → Save money!</li>
-          <li>👨🏫 Private 1-on-1 Lessons → Tailored to your pace</li>
-          <li>⏰ Flexible Scheduling → Work around your schedule!</li>
-          <li>🏆 Driving School Association Certified → Trusted pros</li>
-          <li>🚘 Free Car for Road Tests → Test in your lesson vehicle</li>
+          <li>✅ 仅提供自动挡车辆 → 学车更轻松</li>
+          <li>📍 KW 地区可接送 → 上门接送更方便</li>
+          <li>💳 安省 MTO 认证 → 可享保险优惠</li>
+          <li>👨🏫 一对一私教课程 → 按你的节奏教学</li>
+          <li>⏰ 时间灵活 → 配合你的日程</li>
+          <li>🏆 驾校协会认证 → 更值得信赖</li>
+          <li>🚘 路考可免费提供车辆 → 用熟悉车辆更安心</li>
         </ul>
       </div>
 
       <div class="divider"></div>
 
       <div class="section1" id="services">
-        <h2>Services</h2>
+        <h2>服务项目</h2>
         <div class="container3">
           <div class="grid-item">
-            <h3>In-Vehicle Training</h3>
+            <h3>实车课程</h3>
             <ul>
-              <li>G2: <b>$60/hr</b></li>
-              <li>G License Lessons</li>
+              <li>G2：<b>$60/小时</b></li>
+              <li>G 牌课程</li>
               <ul>
-                <li>Returning Students: <b>$60/hr</b></li>
-                <li>New Students: <b>$70/hr</b></li>
+                <li>老学员：<b>$60/小时</b></li>
+                <li>新学员：<b>$70/小时</b></li>
               </ul>
             </ul>
-            <p>
-              <b>Tax included</b> for all prices listed above
-            </p>
+            <p><b>以上价格已含税</b></p>
           </div>
+
           <div class="grid-item">
-            <h3>Road Tests</h3>
+            <h3>路考服务</h3>
             <ul>
-              <li><b>60 mins</b> of in-car lessons</li>
-              <li>Car rental for road tests</li>
+              <li><b>60 分钟</b> 实车练习</li>
+              <li>路考当天提供考试车辆</li>
               <p></p>
               <p></p>
               <p></p>
             </ul>
-            <p>
-              Road tests cost <b>$220</b> each
-            </p>
+            <p>路考服务费用：<b>$220</b></p>
           </div>
+
           <div class="grid-item">
-            <h3>Full Course ($820)</h3>
+            <h3>完整课程（$820）</h3>
             <ul>
-              <li><b>10 hrs</b> of in-vehicle lessons</li>
-              <li><b>10 hrs</b> of Homelink</li>
-              <li><b>20 hrs</b> online</li>
-              <li>1-on-1 in-vehicle training</li>
-              <li>Free pick up/drop off in Kitchener-Waterloo</li>
+              <li><b>10 小时</b> 实车课程</li>
+              <li><b>10 小时</b> Homelink</li>
+              <li><b>20 小时</b> 在线课程</li>
+              <li>一对一实车教学</li>
+              <li>KW 地区免费接送</li>
             </ul>
           </div>
         </div>
@@ -563,16 +373,14 @@
       <div class="divider"></div>
 
       <div class="section" id="testimonials">
-        <h2>Testimonials</h2>
+        <h2>学员评价</h2>
 
         <div class="testimonial-carousel">
-
           <input type="radio" name="testimonial" id="test1" checked>
           <input type="radio" name="testimonial" id="test2">
           <input type="radio" name="testimonial" id="test3">
 
           <div class="slides">
-
             <div class="testimonial-slide" id="slide1">
               <div class="quote-open">“</div>
 
@@ -613,29 +421,26 @@
 
           <label for="test1" class="arrow left">‹</label>
           <label for="test2" class="arrow right">›</label>
-
         </div>
       </div>
 
       <div class="divider"></div>
 
       <div class="section1" id="about">
-        <h2>About Us</h2>
+        <h2>关于我们</h2>
 
         <div class="about-content">
           <div class="about-image">
-            <img src="about-us.jpeg" alt="Student learning to drive">
+            <img src="about-us.jpeg" alt="学员学习驾驶">
           </div>
 
           <div class="about-text">
             <p>
-              Canadian Driving Academy provides Ministry Approved Driving Education
-              Courses to all students. We provide our students with fully qualified
-              instructors who are patient, professional and knowledgeable.
+              Canadian Driving Academy 提供安省认证的驾驶教育课程。我们的教练经验丰富、耐心细致，
+              教学清晰专业，帮助学员更快建立自信、安全上路。
             </p>
             <p>
-              Our instructors will prepare you for a lifetime of safe driving and
-              ensure that you have the confidence to drive defensively and responsibly.
+              我们将帮助你养成安全驾驶习惯，掌握防御性驾驶技巧，为长期安全驾驶打下坚实基础。
             </p>
           </div>
         </div>
@@ -644,62 +449,57 @@
       <div class="divider"></div>
 
       <div class="section" id="contact">
-        <h2>Contact Us</h2>
+        <h2>联系我们</h2>
 
         <div class="contact-content">
           <div class="contact-text">
-            <p><b>Email:</b>
+            <p><b>邮箱：</b>
               <a href="mailto:Canadiandrivingacademy@gmail.com">Canadiandrivingacademy@gmail.com</a>
             </p>
-            <p><b>Phone:</b> 226-600-0836</p>
-            <p><b>WeChat ID:</b> CanadianDA</p>
+            <p><b>电话：</b> 226-600-0836</p>
+            <p><b>微信：</b> CanadianDA</p>
 
             <a href="mailto:Canadiandrivingacademy@gmail.com" class="button">
-              Book a Lesson
+              邮件咨询
             </a>
           </div>
 
           <div class="contact-image">
-            <img src="contact-us.jpeg" alt="Person driving">
+            <img src="contact-us.jpeg" alt="驾驶中">
           </div>
         </div>
       </div>
     </div>
 
-<script>
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("navLinks");
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
 
-  function closeMenu() {
-    navLinks.classList.remove("open");
-    hamburger.setAttribute("aria-expanded", "false");
-  }
+      function closeMenu() {
+        navLinks.classList.remove("open");
+      }
 
-  hamburger.addEventListener("click", function () {
-    navLinks.classList.toggle("open");
-    const expanded = navLinks.classList.contains("open");
-    hamburger.setAttribute("aria-expanded", expanded);
-  });
+      hamburger.addEventListener("click", function () {
+        navLinks.classList.toggle("open");
+      });
 
-  const links = document.querySelectorAll("#navLinks a");
-  links.forEach(function (link) {
-    link.addEventListener("click", closeMenu);
-  });
+      const links = document.querySelectorAll("#navLinks a");
+      links.forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+      });
 
-  document.addEventListener("click", function (e) {
-    const clickedInsideNavbar = e.target.closest(".navbar");
-    if (!clickedInsideNavbar) {
-      closeMenu();
-    }
-  });
+      document.addEventListener("click", function (e) {
+        const clickedInsideNavbar = e.target.closest(".navbar");
+        if (!clickedInsideNavbar) {
+          closeMenu();
+        }
+      });
 
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-      closeMenu();
-    }
-  });
-</script>
-
-
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeMenu();
+        }
+      });
+    </script>
   </body>
 </html>
