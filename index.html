@@ -15,52 +15,58 @@
         box-sizing: border-box;
       }
 
+      body {
+        background-color: #f5f5f5;
+      }
+
+      /* Responsive Typography */
       h1 {
         font-family: Raleway, sans-serif;
-        font-size: 64px;
+        font-size: clamp(32px, 5vw, 64px);
       }
 
       h2 {
         font-family: Raleway, sans-serif;
-        font-size: 48px;
+        font-size: clamp(28px, 4vw, 48px);
         margin-bottom: 50px;
         text-align: center;
       }
 
       h3 {
-        font-size: 36px;
+        font-size: clamp(22px, 3vw, 36px);
         line-height: 1.5;
         font-family: Nunito, sans-serif;
       }
 
-      p {
-        font-size: 24px;
+      p, ul {
+        font-size: clamp(16px, 2.5vw, 24px);
         line-height: 1.5;
         font-family: Nunito, sans-serif;
-        text-align: left;
       }
 
       ul {
-        font-size: 24px;
-        line-height: 2.5;
-        font-family: Nunito, sans-serif;
         text-align: center;
         list-style-type: none;
       }
 
+      /* Main Container */
       .main-container {
-        width: 1440px;
+        max-width: 1440px;
+        width: 100%;
         margin: 0 auto;
         background-color: white;
         padding-bottom: 50px;
+        overflow-x: hidden;
       }
 
+      /* Navigation */
       .navbar {
         width: 100%;
         background-color: white;
         position: sticky;
         top: 0;
         z-index: 9999;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       }
 
       html {
@@ -68,25 +74,20 @@
       }
 
       .navbar-content {
-        width: 1200px;
+        max-width: 1200px;
+        width: 100%;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 10px 20px;
       }
 
       .logo {
-        height: 12%;
-        width: 12%;
-        padding-bottom: 20px;
-        padding-top: 10px;
-      }
-
-      .toc-link {
-        text-decoration: underline;
-        color: white;
-        font-size: 33px;
-        font-family: Nunito, sans-serif;
+        width: 120px;
+        height: auto;
+        padding: 10px 0;
+        display: block;
       }
 
       .nav-links {
@@ -100,15 +101,14 @@
         color: black;
         font-size: 24px;
         font-family: Nunito, sans-serif;
+        transition: color 0.3s ease;
       }
 
       .nav-link:hover {
         color: red;
       }
 
-      /* -----------------------------
-         HAMBURGER (DESKTOP HIDDEN)
-      ------------------------------*/
+      /* Hamburger Menu */
       .hamburger {
         display: none;
         cursor: pointer;
@@ -116,6 +116,11 @@
         border: 2px solid black;
         border-radius: 10px;
         background: white;
+        transition: all 0.3s ease;
+      }
+
+      .hamburger:hover {
+        background: #f0f0f0;
       }
 
       .hamburger span {
@@ -124,15 +129,29 @@
         height: 3px;
         background: black;
         margin: 6px 0;
+        transition: 0.3s;
       }
 
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-6px, 6px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-6px, -6px);
+      }
+
+      /* Hero Section with Responsive Background */
       .hero {
-        width: 1440px;
-        height: 450px;
+        width: 100%;
+        max-width: 1440px;
+        height: clamp(300px, 50vh, 450px);
         margin: 0 auto;
         position: relative;
         overflow: hidden;
-
         display: flex;
         justify-content: center;
         align-items: center;
@@ -150,28 +169,37 @@
         z-index: 0;
       }
 
+      /* Mobile Hero Background */
+      @media (max-width: 768px) {
+        .hero::before {
+          background-image: url("hero img-mobile.png"); /* Use a mobile-optimized version if available */
+        }
+      }
+
       .hero-content {
-        width: 1200px;
+        max-width: 1200px;
+        width: 100%;
         color: white;
         text-align: center;
         position: relative;
         z-index: 1;
+        padding: 20px;
       }
 
       .hero-content h1 {
         color: white;
-        text-shadow: -2px -2px 0 #000,
-          2px -2px 0 #000,
-          -2px 2px 0 #000,
-          2px 2px 0 #000;
+        text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
       }
 
       .divider {
-        width: 1440px;
+        width: 100%;
+        max-width: 1440px;
         height: 6px;
         background: red;
+        margin: 0 auto;
       }
 
+      /* Sections */
       .section {
         width: 100%;
         margin: 0 auto;
@@ -179,7 +207,6 @@
         display: block;
         background-color: white;
         color: black;
-        font-size: 24px;
       }
 
       .section1 {
@@ -189,9 +216,9 @@
         display: block;
         background-color: #353535;
         color: white;
-        font-size: 24px;
       }
 
+      /* Button */
       .button {
         display: block;
         width: max-content;
@@ -200,12 +227,13 @@
         background-color: black;
         color: white;
         text-decoration: none;
-        font-size: 24px;
+        font-size: clamp(18px, 2.5vw, 24px);
         font-family: Nunito, sans-serif;
         border: 5px solid red;
         border-radius: 50px;
         text-align: center;
         transition: background-color 0.3s ease, color 0.3s ease;
+        white-space: nowrap;
       }
 
       .button:hover {
@@ -213,28 +241,18 @@
         color: white;
       }
 
-      #contact .button {
-        margin: 30px auto 0 auto;
-      }
-
-      .container4 {
-        display: grid;
-        grid-template-columns: 24% 24% 24% 24%;
-        gap: 7px;
-        margin: 0 auto;
-      }
-
+      /* Services Grid */
       .container3 {
-        display: flex;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
         margin: 0 auto;
-        gap: 10px;
-        grid-template-columns: 33% 33% 33%;
+        max-width: 1200px;
+        width: 100%;
       }
 
       .grid-item {
-        align-items: center;
-        width: 375px;
+        width: 100%;
         height: auto;
         padding: 20px;
         border: 3px solid white;
@@ -243,7 +261,6 @@
       .grid-item ul {
         text-align: left;
         line-height: 2;
-        font-size: 24px;
         list-style-type: disc;
         padding-left: 20px;
       }
@@ -260,12 +277,10 @@
         padding-bottom: 30px;
       }
 
-      .takeaway {
-        margin-bottom: 50px;
-      }
-
+      /* Testimonials */
       .testimonial-carousel {
-        width: 1000px;
+        max-width: 1000px;
+        width: 100%;
         margin: 0 auto;
         position: relative;
         font-family: Nunito, sans-serif;
@@ -279,15 +294,15 @@
         display: none;
         background-color: #222;
         color: white;
-        padding: 80px 100px;
+        padding: 60px 80px;
         border: 6px solid red;
         position: relative;
         min-height: 350px;
       }
 
-      #test1:checked~.slides #slide1,
-      #test2:checked~.slides #slide2,
-      #test3:checked~.slides #slide3 {
+      #test1:checked ~ .slides #slide1,
+      #test2:checked ~ .slides #slide2,
+      #test3:checked ~ .slides #slide3 {
         display: block;
       }
 
@@ -295,7 +310,7 @@
         position: absolute;
         top: 30px;
         left: 40px;
-        font-size: 80px;
+        font-size: clamp(40px, 8vw, 80px);
         color: white;
       }
 
@@ -303,12 +318,12 @@
         position: absolute;
         bottom: 60px;
         right: 60px;
-        font-size: 80px;
+        font-size: clamp(40px, 8vw, 80px);
         color: white;
       }
 
       .testimonial-text {
-        font-size: 24px;
+        font-size: clamp(16px, 2.5vw, 24px);
         line-height: 1.6;
         text-align: left;
       }
@@ -318,36 +333,40 @@
         bottom: 30px;
         right: 80px;
         font-style: italic;
-        font-size: 24px;
+        font-size: clamp(16px, 2vw, 24px);
       }
 
       .arrow {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        font-size: 80px;
+        font-size: clamp(30px, 6vw, 60px);
         cursor: pointer;
         color: black;
         background: white;
         border-radius: 50%;
-        padding: 5px 12px;
+        padding: 5px 15px;
+        user-select: none;
+        transition: all 0.3s ease;
+      }
+
+      .arrow:hover {
+        background: #f0f0f0;
+        transform: translateY(-50%) scale(1.1);
       }
 
       .arrow.left {
-        left: -60px;
+        left: -40px;
       }
 
       .arrow.right {
-        right: -60px;
+        right: -40px;
       }
 
-      img {
-        width: 100%;
-        height: 100%;
-      }
-
+      /* About Section */
       .about-content {
-        width: 1200px;
+        max-width: 1200px;
+        width: 100%;
         margin: 0 auto;
         display: flex;
         gap: 40px;
@@ -355,25 +374,25 @@
       }
 
       .about-image {
-        width: 30%;
+        flex: 0 0 30%;
+        min-width: 250px;
       }
 
       .about-image img {
         width: 100%;
         height: auto;
         border-radius: 10px;
+        display: block;
       }
 
       .about-text {
-        width: 70%;
+        flex: 1;
       }
 
-      #contact p {
-        margin-bottom: 20px;
-      }
-
+      /* Contact Section */
       .contact-content {
-        width: 1200px;
+        max-width: 1200px;
+        width: 100%;
         margin: 0 auto;
         display: flex;
         gap: 40px;
@@ -381,42 +400,57 @@
       }
 
       .contact-text {
-        width: 60%;
+        flex: 0 0 60%;
       }
 
       .contact-image {
-        width: 40%;
+        flex: 0 0 40%;
+        min-width: 250px;
       }
 
       .contact-image img {
-        width: 70%;
+        width: 100%;
         height: auto;
         border-radius: 10px;
+        display: block;
       }
 
-      /* -----------------------------
-         MOBILE NAV DROPDOWN
-      ------------------------------*/
-      @media (max-width: 900px) {
+      /* Global Image Responsiveness */
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Mobile Styles */
+      @media (max-width: 768px) {
+        html {
+          scroll-padding-top: 80px;
+        }
+
         .navbar-content {
-          width: 100%;
-          padding: 0 20px;
-          flex-wrap: wrap;
+          padding: 10px 15px;
+        }
+
+        .logo {
+          width: 80px;
         }
 
         .hamburger {
           display: block;
-          margin-left: auto;
         }
 
         .nav-links {
           display: none;
-          width: 100%;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: white;
           flex-direction: column;
           gap: 0;
-          margin-top: 10px;
-          padding: 10px 0;
           border-top: 2px solid red;
+          box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         }
 
         .nav-links.open {
@@ -425,35 +459,28 @@
 
         .nav-links li {
           width: 100%;
+          border-bottom: 1px solid #eee;
         }
 
         .nav-link {
           display: block;
           width: 100%;
-          padding: 14px 10px;
+          padding: 15px 20px;
           font-size: 20px;
         }
 
-        .nav-link:hover {
-          background: #f2f2f2;
-          color: black;
+        .hero {
+          height: 350px;
         }
 
-        .hero,
-        .divider {
-          width: 100%;
-        }
-
-        .hero-content,
-        .about-content,
-        .contact-content {
-          width: 100%;
-          padding: 0 20px;
+        .section, .section1 {
+          padding: 40px 15px;
         }
 
         .about-content,
         .contact-content {
           flex-direction: column;
+          gap: 30px;
         }
 
         .about-image,
@@ -461,10 +488,91 @@
         .contact-text,
         .contact-image {
           width: 100%;
+          flex: none;
+          min-width: auto;
         }
 
-        .contact-image img {
-          width: 100%;
+        .grid-item {
+          padding: 15px;
+        }
+
+        .testimonial-slide {
+          padding: 50px 30px 80px 30px;
+          min-height: auto;
+        }
+
+        .quote-open {
+          top: 20px;
+          left: 20px;
+        }
+
+        .quote-close {
+          bottom: 40px;
+          right: 40px;
+        }
+
+        .testimonial-author {
+          bottom: 20px;
+          right: 30px;
+        }
+
+        .arrow {
+          padding: 5px 10px;
+        }
+
+        .arrow.left {
+          left: 10px;
+        }
+
+        .arrow.right {
+          right: 10px;
+        }
+      }
+
+      /* Tablet Styles */
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .navbar-content,
+        .hero-content,
+        .about-content,
+        .contact-content {
+          padding: 0 30px;
+        }
+
+        .container3 {
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .testimonial-carousel {
+          max-width: 800px;
+        }
+
+        .about-image,
+        .contact-image {
+          min-width: 200px;
+        }
+      }
+
+      /* Small Mobile Styles */
+      @media (max-width: 480px) {
+        .logo {
+          width: 60px;
+        }
+
+        .hero {
+          height: 250px;
+        }
+
+        .button {
+          padding: 12px 30px;
+        }
+
+        .testimonial-carousel {
+          padding: 0 10px;
+        }
+
+        .arrow {
+          font-size: 30px;
+          padding: 3px 8px;
         }
       }
     </style>
@@ -472,7 +580,8 @@
 
   <body>
     <div class="main-container">
-      <div class="navbar">
+      <!-- Navigation -->
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="navbar-content">
           <img src="cda-logo.png" alt="CDA Logo" class="logo" width="120" height="120">
 
@@ -490,20 +599,23 @@
             <li><a href="index-zh.html" class="nav-link">中文</a></li>
           </ul>
         </div>
-      </div>
+      </nav>
 
-      <div class="hero">
+      <!-- Hero Section -->
+      <section class="hero" aria-labelledby="hero-title">
         <div class="hero-content">
-          <h1>MTO Approved Driving School</h1>
-
+          <h1 id="hero-title">MTO Approved Driving School</h1>
           <a href="#contact" class="button">
             Book a Lesson
           </a>
         </div>
-      </div>
+      </section>
 
-      <div class="section">
-        <h2>Why Choose Us?</h2>
+      <div class="divider"></div>
+
+      <!-- Why Choose Us -->
+      <section class="section" aria-labelledby="why-choose-us">
+        <h2 id="why-choose-us">Why Choose Us?</h2>
         <ul>
           <li>✅ Automatic Cars Only → No stick-shift stress!</li>
           <li>📍 Pick-Up/Drop-Off Anywhere in KW → We come to you</li>
@@ -513,19 +625,20 @@
           <li>🏆 Driving School Association Certified → Trusted pros</li>
           <li>🚘 Free Car for Road Tests → Test in your lesson vehicle</li>
         </ul>
-      </div>
+      </section>
 
       <div class="divider"></div>
 
-      <div class="section1" id="services">
-        <h2>Services</h2>
+      <!-- Services -->
+      <section class="section1" id="services" aria-labelledby="services-title">
+        <h2 id="services-title">Services</h2>
         <div class="container3">
           <div class="grid-item">
             <h3>In-Vehicle Training</h3>
             <ul>
               <li>G2: <b>$60/hr</b></li>
               <li>G License Lessons</li>
-              <ul>
+              <ul style="margin-left: 20px;">
                 <li>Returning Students: <b>$60/hr</b></li>
                 <li>New Students: <b>$70/hr</b></li>
               </ul>
@@ -539,9 +652,6 @@
             <ul>
               <li><b>60 mins</b> of in-car lessons</li>
               <li>Car rental for road tests</li>
-              <p></p>
-              <p></p>
-              <p></p>
             </ul>
             <p>
               Road tests cost <b>$220</b> each
@@ -558,24 +668,22 @@
             </ul>
           </div>
         </div>
-      </div>
+      </section>
 
       <div class="divider"></div>
 
-      <div class="section" id="testimonials">
-        <h2>Testimonials</h2>
+      <!-- Testimonials -->
+      <section class="section" id="testimonials" aria-labelledby="testimonials-title">
+        <h2 id="testimonials-title">Testimonials</h2>
 
         <div class="testimonial-carousel">
-
           <input type="radio" name="testimonial" id="test1" checked>
           <input type="radio" name="testimonial" id="test2">
           <input type="radio" name="testimonial" id="test3">
 
           <div class="slides">
-
             <div class="testimonial-slide" id="slide1">
               <div class="quote-open">“</div>
-
               <p class="testimonial-text">
                 Really enjoyed my time here with CDA driving instructor.
                 They explain everything with a lot of detail, very hard to
@@ -583,44 +691,39 @@
                 them I have my license without any mistakes or accidents.
                 Thank you Canadian Driving Academy.
               </p>
-
               <div class="quote-close">”</div>
               <div class="testimonial-author">- Yusuf Noorrah</div>
             </div>
 
             <div class="testimonial-slide" id="slide2">
               <div class="quote-open">“</div>
-
               <p class="testimonial-text">
                 Thank you so much for all the patience and great guidance during my driving lessons. You made driving fun and easy to learn, and all the tips and tricks you gave me were very helpful. From the first lesson I knew you had every students' best interest and you made every minute count. Now I have more confidence on the road, all thanks to you.
               </p>
-
               <div class="quote-close">”</div>
               <div class="testimonial-author">- Olivia</div>
             </div>
 
             <div class="testimonial-slide" id="slide3">
               <div class="quote-open">“</div>
-
               <p class="testimonial-text">
                 William took his G2 test to day HE PASSED... WHO HOOO.. I thank you guys very much for providing awesome in class and in car driving has been the best for teaching both my boys behind the wheel. I am very pleased and i would certainly recommend Canadian Driving Academy to anyone.
               </p>
-
               <div class="quote-close">”</div>
               <div class="testimonial-author">- William.</div>
             </div>
           </div>
 
-          <label for="test1" class="arrow left">‹</label>
-          <label for="test2" class="arrow right">›</label>
-
+          <label for="test1" class="arrow left" aria-label="Previous testimonial">‹</label>
+          <label for="test2" class="arrow right" aria-label="Next testimonial">›</label>
         </div>
-      </div>
+      </section>
 
       <div class="divider"></div>
 
-      <div class="section1" id="about">
-        <h2>About Us</h2>
+      <!-- About Us -->
+      <section class="section1" id="about" aria-labelledby="about-title">
+        <h2 id="about-title">About Us</h2>
 
         <div class="about-content">
           <div class="about-image">
@@ -639,12 +742,13 @@
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
       <div class="divider"></div>
 
-      <div class="section" id="contact">
-        <h2>Contact Us</h2>
+      <!-- Contact -->
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contact Us</h2>
 
         <div class="contact-content">
           <div class="contact-text">
@@ -663,43 +767,58 @@
             <img src="contact-us.jpeg" alt="Person driving">
           </div>
         </div>
-      </div>
+      </section>
     </div>
 
-<script>
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("navLinks");
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
 
-  function closeMenu() {
-    navLinks.classList.remove("open");
-    hamburger.setAttribute("aria-expanded", "false");
-  }
+      function closeMenu() {
+        navLinks.classList.remove("open");
+        hamburger.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
+      }
 
-  hamburger.addEventListener("click", function () {
-    navLinks.classList.toggle("open");
-    const expanded = navLinks.classList.contains("open");
-    hamburger.setAttribute("aria-expanded", expanded);
-  });
+      function toggleMenu() {
+        navLinks.classList.toggle("open");
+        hamburger.classList.toggle("active");
+        const expanded = navLinks.classList.contains("open");
+        hamburger.setAttribute("aria-expanded", expanded);
+      }
 
-  const links = document.querySelectorAll("#navLinks a");
-  links.forEach(function (link) {
-    link.addEventListener("click", closeMenu);
-  });
+      hamburger.addEventListener("click", function (e) {
+        e.stopPropagation();
+        toggleMenu();
+      });
 
-  document.addEventListener("click", function (e) {
-    const clickedInsideNavbar = e.target.closest(".navbar");
-    if (!clickedInsideNavbar) {
-      closeMenu();
-    }
-  });
+      // Close menu when clicking a nav link
+      const links = document.querySelectorAll("#navLinks a");
+      links.forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+      });
 
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-      closeMenu();
-    }
-  });
-</script>
+      // Close menu when clicking outside
+      document.addEventListener("click", function (e) {
+        const clickedInsideNavbar = e.target.closest(".navbar");
+        if (!clickedInsideNavbar && navLinks.classList.contains("open")) {
+          closeMenu();
+        }
+      });
 
+      // Close menu on Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && navLinks.classList.contains("open")) {
+          closeMenu();
+        }
+      });
 
+      // Handle window resize
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && navLinks.classList.contains('open')) {
+          closeMenu();
+        }
+      });
+    </script>
   </body>
 </html>
