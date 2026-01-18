@@ -144,7 +144,7 @@
         transform: rotate(45deg) translate(-6px, -6px);
       }
 
-      /* Hero Section with Responsive Background */
+      /* Hero Section */
       .hero {
         width: 100%;
         max-width: 1440px;
@@ -167,13 +167,6 @@
         background-repeat: no-repeat;
         filter: grayscale(100%);
         z-index: 0;
-      }
-
-      /* Mobile Hero Background */
-      @media (max-width: 768px) {
-        .hero::before {
-          background-image: url("hero img-mobile.png"); /* Use a mobile-optimized version if available */
-        }
       }
 
       .hero-content {
@@ -277,17 +270,13 @@
         padding-bottom: 30px;
       }
 
-      /* Testimonials */
+      /* Testimonials - SIMPLIFIED CSS */
       .testimonial-carousel {
         max-width: 1000px;
         width: 100%;
         margin: 0 auto;
         position: relative;
         font-family: Nunito, sans-serif;
-      }
-
-      .testimonial-carousel input {
-        display: none;
       }
 
       .testimonial-slide {
@@ -300,9 +289,7 @@
         min-height: 350px;
       }
 
-      #test1:checked ~ .slides #slide1,
-      #test2:checked ~ .slides #slide2,
-      #test3:checked ~ .slides #slide3 {
+      .testimonial-slide.active {
         display: block;
       }
 
@@ -336,6 +323,7 @@
         font-size: clamp(16px, 2vw, 24px);
       }
 
+      /* Single set of arrows */
       .arrow {
         position: absolute;
         top: 50%;
@@ -516,10 +504,6 @@
           right: 30px;
         }
 
-        .arrow {
-          padding: 5px 10px;
-        }
-
         .arrow.left {
           left: 10px;
         }
@@ -552,7 +536,7 @@
         }
       }
 
-      /* Small Mobile Styles */
+      /* Small Mobile */
       @media (max-width: 480px) {
         .logo {
           width: 60px;
@@ -601,7 +585,7 @@
         </div>
       </nav>
 
-      <!-- Hero Section -->
+      <!-- Hero -->
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-content">
           <h1 id="hero-title">MTO Approved Driving School</h1>
@@ -672,50 +656,47 @@
 
       <div class="divider"></div>
 
-      <!-- Testimonials -->
+      <!-- Testimonials - JAVASCRIPT POWERED -->
       <section class="section" id="testimonials" aria-labelledby="testimonials-title">
         <h2 id="testimonials-title">Testimonials</h2>
 
-        <div class="testimonial-carousel">
-          <input type="radio" name="testimonial" id="test1" checked>
-          <input type="radio" name="testimonial" id="test2">
-          <input type="radio" name="testimonial" id="test3">
-
-          <div class="slides">
-            <div class="testimonial-slide" id="slide1">
-              <div class="quote-open">“</div>
-              <p class="testimonial-text">
-                Really enjoyed my time here with CDA driving instructor.
-                They explain everything with a lot of detail, very hard to
-                get confused but very easy to gain great success. Thanks to
-                them I have my license without any mistakes or accidents.
-                Thank you Canadian Driving Academy.
-              </p>
-              <div class="quote-close">”</div>
-              <div class="testimonial-author">- Yusuf Noorrah</div>
-            </div>
-
-            <div class="testimonial-slide" id="slide2">
-              <div class="quote-open">“</div>
-              <p class="testimonial-text">
-                Thank you so much for all the patience and great guidance during my driving lessons. You made driving fun and easy to learn, and all the tips and tricks you gave me were very helpful. From the first lesson I knew you had every students' best interest and you made every minute count. Now I have more confidence on the road, all thanks to you.
-              </p>
-              <div class="quote-close">”</div>
-              <div class="testimonial-author">- Olivia</div>
-            </div>
-
-            <div class="testimonial-slide" id="slide3">
-              <div class="quote-open">“</div>
-              <p class="testimonial-text">
-                William took his G2 test to day HE PASSED... WHO HOOO.. I thank you guys very much for providing awesome in class and in car driving has been the best for teaching both my boys behind the wheel. I am very pleased and i would certainly recommend Canadian Driving Academy to anyone.
-              </p>
-              <div class="quote-close">”</div>
-              <div class="testimonial-author">- William.</div>
-            </div>
+        <div class="testimonial-carousel" id="testimonialCarousel">
+          <div class="testimonial-slide active" data-slide="0">
+            <div class="quote-open">“</div>
+            <p class="testimonial-text">
+              Really enjoyed my time here with CDA driving instructor.
+              They explain everything with a lot of detail, very hard to
+              get confused but very easy to gain great success. Thanks to
+              them I have my license without any mistakes or accidents.
+              Thank you Canadian Driving Academy.
+            </p>
+            <div class="quote-close">”</div>
+            <div class="testimonial-author">- Yusuf Noorrah</div>
           </div>
 
-          <label for="test1" class="arrow left" aria-label="Previous testimonial">‹</label>
-          <label for="test2" class="arrow right" aria-label="Next testimonial">›</label>
+          <div class="testimonial-slide" data-slide="1">
+            <div class="quote-open">“</div>
+            <p class="testimonial-text">
+              Thank you so much for all the patience and great guidance during my driving lessons. You made driving fun and easy to learn, and all the tips and tricks you gave me were very helpful. From the first lesson I knew you had every students' best interest and you made every minute count. Now I have more confidence on the road, all thanks to you.
+            </p>
+            <div class="quote-close">”</div>
+            <div class="testimonial-author">- Olivia</div>
+          </div>
+
+          <div class="testimonial-slide" data-slide="2">
+            <div class="quote-open">“</div>
+            <p class="testimonial-text">
+              William took his G2 test to day HE PASSED... WHO HOOO.. I thank you guys very much for providing awesome in class and in car driving has been the best for teaching both my boys behind the wheel. I am very pleased and i would certainly recommend Canadian Driving Academy to anyone.
+            </p>
+            <div class="quote-close">”</div>
+            <div class="testimonial-author">- William</div>
+          </div>
+
+          <!-- Add more testimonials here! -->
+
+          <!-- Single set of arrows -->
+          <button class="arrow left" aria-label="Previous testimonial">‹</button>
+          <button class="arrow right" aria-label="Next testimonial">›</button>
         </div>
       </section>
 
@@ -771,6 +752,48 @@
     </div>
 
     <script>
+      // --- Testimonial Carousel Logic ---
+      const carousel = document.getElementById('testimonialCarousel');
+      const slides = carousel.querySelectorAll('.testimonial-slide');
+      const leftArrow = carousel.querySelector('.arrow.left');
+      const rightArrow = carousel.querySelector('.arrow.right');
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        // Hide all slides
+        slides.forEach(slide => slide.classList.remove('active'));
+        
+        // Show current slide
+        slides[index].classList.add('active');
+        
+        // Update current slide tracker
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      function previousSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      // Arrow click handlers
+      leftArrow.addEventListener('click', previousSlide);
+      rightArrow.addEventListener('click', nextSlide);
+
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+          previousSlide();
+        } else if (e.key === 'ArrowRight') {
+          nextSlide();
+        }
+      });
+
+      // --- Hamburger Menu Logic (same as before) ---
       const hamburger = document.getElementById("hamburger");
       const navLinks = document.getElementById("navLinks");
 
