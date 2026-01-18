@@ -211,17 +211,18 @@
         color: white;
       }
 
-      /* Button */
+      /* Button - MATCH HERO FADE EFFECT */
       .button {
         display: block;
         width: max-content;
         margin: 40px auto 0 auto;
         padding: 15px 40px;
         background-color: black;
-        color: white;
+        color: white !important;
         text-decoration: none;
         font-size: clamp(18px, 2.5vw, 24px);
         font-family: Nunito, sans-serif;
+        font-weight: 400;
         border: 5px solid red;
         border-radius: 50px;
         text-align: center;
@@ -231,7 +232,8 @@
 
       .button:hover {
         background-color: #8f3c39;
-        color: white;
+        color: white !important;
+        text-decoration: none !important;
       }
 
       /* Services Grid */
@@ -323,19 +325,25 @@
         font-size: clamp(16px, 2vw, 24px);
       }
 
-      /* Single set of arrows */
+      /* CIRCULAR ARROWS */
       .arrow {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        font-size: clamp(30px, 6vw, 60px);
+        font-size: clamp(24px, 5vw, 40px);
         cursor: pointer;
         color: black;
         background: white;
         border-radius: 50%;
-        padding: 5px 15px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         user-select: none;
         transition: all 0.3s ease;
+        border: none;
+        padding: 0;
       }
 
       .arrow:hover {
@@ -410,8 +418,21 @@
         display: block;
       }
 
-      /* Mobile Styles */
-      @media (max-width: 768px) {
+      /* Contact links styling */
+      .contact-text a {
+        color: #0066cc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-weight: 400;
+      }
+
+      .contact-text a:hover {
+        color: red;
+        text-decoration: underline;
+      }
+
+      /* Mobile Styles - CHANGED TO 1024px */
+      @media (max-width: 1024px) {
         html {
           scroll-padding-top: 80px;
         }
@@ -504,6 +525,12 @@
           right: 30px;
         }
 
+        .arrow {
+          width: 40px;
+          height: 40px;
+          font-size: 20px;
+        }
+
         .arrow.left {
           left: 10px;
         }
@@ -513,30 +540,7 @@
         }
       }
 
-      /* Tablet Styles */
-      @media (min-width: 769px) and (max-width: 1024px) {
-        .navbar-content,
-        .hero-content,
-        .about-content,
-        .contact-content {
-          padding: 0 30px;
-        }
-
-        .container3 {
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        }
-
-        .testimonial-carousel {
-          max-width: 800px;
-        }
-
-        .about-image,
-        .contact-image {
-          min-width: 200px;
-        }
-      }
-
-      /* Small Mobile */
+      /* Small Mobile - Keep 480px for very small screens */
       @media (max-width: 480px) {
         .logo {
           width: 60px;
@@ -555,8 +559,9 @@
         }
 
         .arrow {
-          font-size: 30px;
-          padding: 3px 8px;
+          width: 35px;
+          height: 35px;
+          font-size: 18px;
         }
       }
     </style>
@@ -606,8 +611,7 @@
           <li>💳 M.T.O Approved = Insurance Discounts → Save money!</li>
           <li>👨🏫 Private 1-on-1 Lessons → Tailored to your pace</li>
           <li>⏰ Flexible Scheduling → Work around your schedule!</li>
-          <li>🏆 Driving School Association Certified → Trusted pros</li>
-          <li>🚘 Free Car for Road Tests → Test in your lesson vehicle</li>
+          <li>🚘 Car Available for Road Tests → Test in your lesson vehicle</li>
         </ul>
       </section>
 
@@ -627,9 +631,6 @@
                 <li>New Students: <b>$70/hr</b></li>
               </ul>
             </ul>
-            <p>
-              <b>Tax included</b> for all prices listed above
-            </p>
           </div>
           <div class="grid-item">
             <h3>Road Tests</h3>
@@ -692,8 +693,6 @@
             <div class="testimonial-author">- William</div>
           </div>
 
-          <!-- Add more testimonials here! -->
-
           <!-- Single set of arrows -->
           <button class="arrow left" aria-label="Previous testimonial">‹</button>
           <button class="arrow right" aria-label="Next testimonial">›</button>
@@ -736,7 +735,8 @@
             <p><b>Email:</b>
               <a href="mailto:Canadiandrivingacademy@gmail.com">Canadiandrivingacademy@gmail.com</a>
             </p>
-            <p><b>Phone:</b> 226-600-0836</p>
+            <p><b>Text:</b> <a href="sms:+12266000836">226-600-0836</a> — Best during work hours</p>
+            <p><b>Call:</b> <a href="tel:+12266000836">226-600-0836</a> — Evenings</p>
             <p><b>WeChat ID:</b> CanadianDA</p>
 
             <a href="mailto:Canadiandrivingacademy@gmail.com" class="button">
@@ -793,7 +793,7 @@
         }
       });
 
-      // --- Hamburger Menu Logic (same as before) ---
+      // --- Hamburger Menu Logic ---
       const hamburger = document.getElementById("hamburger");
       const navLinks = document.getElementById("navLinks");
 
@@ -836,9 +836,9 @@
         }
       });
 
-      // Handle window resize
+      // Handle window resize - UPDATED BREAKPOINT
       window.addEventListener('resize', function() {
-        if (window.innerWidth > 768 && navLinks.classList.contains('open')) {
+        if (window.innerWidth > 1024 && navLinks.classList.contains('open')) {
           closeMenu();
         }
       });
