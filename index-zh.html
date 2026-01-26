@@ -218,7 +218,7 @@
         margin: 40px auto 0 auto;
         padding: 15px 40px;
         background-color: black;
-        color: white;
+        color: white !important;
         text-decoration: none;
         font-size: clamp(18px, 2.5vw, 24px);
         font-family: Nunito, sans-serif;
@@ -231,7 +231,8 @@
 
       .button:hover {
         background-color: #8f3c39;
-        color: white;
+        color: white !important;
+        text-decoration: none !important;
       }
 
       /* Services Grid */
@@ -328,15 +329,20 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        font-size: clamp(30px, 6vw, 60px);
+        font-size: clamp(24px, 5vw, 40px);
         cursor: pointer;
         color: black;
         background: white;
         border-radius: 50%;
-        padding: 5px 15px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         user-select: none;
         transition: all 0.3s ease;
         border: none;
+        padding: 0;
       }
 
       .arrow:hover {
@@ -411,8 +417,8 @@
         display: block;
       }
 
-      /* Mobile Styles */
-      @media (max-width: 768px) {
+      /* Mobile Styles - CHANGED TO 1024px */
+      @media (max-width: 1024px) {
         html {
           scroll-padding-top: 80px;
         }
@@ -505,35 +511,18 @@
           right: 30px;
         }
 
+        .arrow {
+          width: 40px;
+          height: 40px;
+          font-size: 20px;
+        }
+
         .arrow.left {
           left: 10px;
         }
 
         .arrow.right {
           right: 10px;
-        }
-      }
-
-      /* Tablet Styles */
-      @media (min-width: 769px) and (max-width: 1024px) {
-        .navbar-content,
-        .hero-content,
-        .about-content,
-        .contact-content {
-          padding: 0 30px;
-        }
-
-        .container3 {
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        }
-
-        .testimonial-carousel {
-          max-width: 800px;
-        }
-
-        .about-image,
-        .contact-image {
-          min-width: 200px;
         }
       }
 
@@ -556,8 +545,9 @@
         }
 
         .arrow {
-          font-size: 30px;
-          padding: 3px 8px;
+          width: 35px;
+          height: 35px;
+          font-size: 18px;
         }
       }
     </style>
@@ -691,8 +681,6 @@
             <div class="testimonial-author">- William.</div>
           </div>
 
-          <!-- Add more testimonials here! -->
-
           <!-- Single set of arrows -->
           <button class="arrow left" aria-label="Previous testimonial">‹</button>
           <button class="arrow right" aria-label="Next testimonial">›</button>
@@ -823,8 +811,9 @@
         }
       });
 
+      // Handle window resize - UPDATED BREAKPOINT
       window.addEventListener('resize', function() {
-        if (window.innerWidth > 768 && navLinks.classList.contains('open')) {
+        if (window.innerWidth > 1024 && navLinks.classList.contains('open')) {
           closeMenu();
         }
       });
