@@ -184,6 +184,14 @@
         text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
       }
 
+      /* Button container for side-by-side buttons */
+      .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
       .divider {
         width: 100%;
         max-width: 1440px;
@@ -580,9 +588,14 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-content">
           <h1 id="hero-title">安省认证驾驶学校</h1>
-          <a href="#contact" class="button">
-            预约课程
-          </a>
+          <div class="button-container">
+            <a href="#contact" class="button">
+              预约课程
+            </a>
+            <a href="https://drivetest.ca/dtbookingngapp/registration/signup" target="_blank" class="button">
+              预约路考
+            </a>
+          </div>
         </div>
       </section>
 
@@ -618,22 +631,20 @@
                 <li>新学员：<b>$70/小时</b></li>
               </ul>
             </ul>
-            <p><b>以上价格已含税</b></p>
           </div>
 
           <div class="grid-item">
-            <h3>路考服务</h3>
+            <h3>路考服务 ($220)</h3>
             <ul>
-              <li><b>60 分钟</b> 实车练习</li>
+              <li><b>60 分钟</b> 考前练车</li>
               <li>路考当天提供考试车辆</li>
             </ul>
-            <p>路考服务费用：<b>$220</b></p>
           </div>
 
           <div class="grid-item">
             <h3>完整课程（$820）</h3>
             <ul>
-              <li><b>10 小时</b> 实车课程</li>
+              <li><b>10 小时</b> 练车</li>
               <li><b>10 小时</b> Homelink</li>
               <li><b>20 小时</b> 在线课程</li>
               <li>一对一实车教学</li>
@@ -721,7 +732,7 @@
             <p><b>邮箱：</b>
               <a href="mailto:Canadiandrivingacademy@gmail.com">Canadiandrivingacademy@gmail.com</a>
             </p>
-            <p><b>电话：</b> 226-600-0836</p>
+            <p><b>电话：</b> <a href="tel:+12266000836">226-600-0836</a> (工作时间最好发短信)</p>
             <p><b>微信：</b> CanadianDA</p>
 
             <a href="mailto:Canadiandrivingacademy@gmail.com" class="button">

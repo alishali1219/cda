@@ -184,6 +184,14 @@
         text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
       }
 
+      /* Button container for side-by-side buttons */
+      .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
       .divider {
         width: 100%;
         max-width: 1440px;
@@ -405,7 +413,7 @@
       }
 
       .contact-image img {
-        width: 80%;
+        width: 100%;
         height: auto;
         border-radius: 10px;
         display: block;
@@ -525,6 +533,7 @@
           right: 30px;
         }
 
+        /* Mobile arrow sizing */
         .arrow {
           width: 40px;
           height: 40px;
@@ -594,9 +603,14 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-content">
           <h1 id="hero-title">MTO Approved Driving School</h1>
-          <a href="#contact" class="button">
-            Book a Lesson
-          </a>
+          <div class="button-container">
+            <a href="#contact" class="button">
+              Book a Lesson
+            </a>
+            <a href="https://drivetest.ca/dtbookingngapp/registration/signup" target="_blank" class="button">
+              Book a Road Test
+            </a>
+          </div>
         </div>
       </section>
 
@@ -633,13 +647,12 @@
             </ul>
           </div>
           <div class="grid-item">
-            <h3>Road Tests</h3>
+            <h3>Road Tests ($220)</h3>
             <ul>
               <li><b>60 mins</b> of in-car lessons</li>
               <li>Car rental for road tests</li>
             </ul>
             <p>
-              Road tests cost <b>$220</b> each
             </p>
           </div>
           <div class="grid-item">
@@ -836,7 +849,7 @@
         }
       });
 
-      // Handle window resize - UPDATED BREAKPOINT
+      // Handle window resize
       window.addEventListener('resize', function() {
         if (window.innerWidth > 1024 && navLinks.classList.contains('open')) {
           closeMenu();
