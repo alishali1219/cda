@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canadian Driving Academy</title>
+    <title>加拿大驾驶学院</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -19,47 +19,47 @@
         background-color: #f5f5f5;
       }
 
+      /* Responsive Typography */
       h1 {
         font-family: Raleway, sans-serif;
-        font-size: clamp(36px, 5vw, 64px);
+        font-size: clamp(32px, 5vw, 64px);
       }
 
       h2 {
         font-family: Raleway, sans-serif;
-        font-size: clamp(32px, 4vw, 48px);
+        font-size: clamp(28px, 4vw, 48px);
         margin-bottom: 50px;
         text-align: center;
       }
 
       h3 {
-        font-size: clamp(24px, 3vw, 36px);
+        font-size: clamp(22px, 3vw, 36px);
         line-height: 1.5;
         font-family: Nunito, sans-serif;
       }
 
-      p {
-        font-size: clamp(18px, 2.5vw, 24px);
+      p, ul {
+        font-size: clamp(16px, 2.5vw, 24px);
         line-height: 1.5;
         font-family: Nunito, sans-serif;
-        text-align: left;
       }
 
       ul {
-        font-size: clamp(18px, 2.5vw, 24px);
-        line-height: 2.5;
-        font-family: Nunito, sans-serif;
         text-align: center;
         list-style-type: none;
       }
 
+      /* Main Container */
       .main-container {
         max-width: 1440px;
         width: 100%;
         margin: 0 auto;
         background-color: white;
         padding-bottom: 50px;
+        overflow-x: hidden;
       }
 
+      /* Navigation */
       .navbar {
         width: 100%;
         background-color: white;
@@ -192,14 +192,6 @@
         flex-wrap: wrap;
       }
 
-      .divider {
-        width: 100%;
-        max-width: 1440px;
-        height: 6px;
-        background: red;
-        margin: 0 auto;
-      }
-
       /* Sections */
       .section {
         width: 100%;
@@ -219,7 +211,7 @@
         color: white;
       }
 
-      /* Button */
+      /* Button - MATCH HERO FADE EFFECT */
       .button {
         display: block;
         width: max-content;
@@ -230,8 +222,9 @@
         text-decoration: none;
         font-size: clamp(18px, 2.5vw, 24px);
         font-family: Nunito, sans-serif;
-        border: 5px solid red;
-        border-radius: 50px;
+        font-weight: 400;
+        border: 2px solid rgb(114, 0, 0);
+        border-radius: 10px;
         text-align: center;
         transition: background-color 0.3s ease, color 0.3s ease;
         white-space: nowrap;
@@ -257,7 +250,8 @@
         width: 100%;
         height: auto;
         padding: 20px;
-        border: 3px solid white;
+        border: 2px solid white;
+        border-radius: 10px;
       }
 
       .grid-item ul {
@@ -279,7 +273,7 @@
         padding-bottom: 30px;
       }
 
-      /* Testimonials - JAVASCRIPT POWERED */
+      /* Testimonials - SIMPLIFIED CSS */
       .testimonial-carousel {
         max-width: 1000px;
         width: 100%;
@@ -293,7 +287,8 @@
         background-color: #222;
         color: white;
         padding: 60px 80px;
-        border: 6px solid red;
+        border: 2px solid rgb(114, 0, 0);
+        border-radius: 10px;
         position: relative;
         min-height: 350px;
       }
@@ -332,7 +327,7 @@
         font-size: clamp(16px, 2vw, 24px);
       }
 
-      /* Single set of arrows */
+      /* CIRCULAR ARROWS */
       .arrow {
         position: absolute;
         top: 50%;
@@ -412,7 +407,7 @@
       }
 
       .contact-image img {
-        width: 100%;
+        width: 80%;
         height: auto;
         border-radius: 10px;
         display: block;
@@ -423,6 +418,19 @@
         max-width: 100%;
         height: auto;
         display: block;
+      }
+
+      /* Contact links styling */
+      .contact-text a {
+        color: #0066cc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-weight: 400;
+      }
+
+      .contact-text a:hover {
+        color: red;
+        text-decoration: underline;
       }
 
       /* Mobile Styles - CHANGED TO 1024px */
@@ -519,6 +527,7 @@
           right: 30px;
         }
 
+        /* Mobile arrow sizing */
         .arrow {
           width: 40px;
           height: 40px;
@@ -534,7 +543,7 @@
         }
       }
 
-      /* Small Mobile */
+      /* Small Mobile - Keep 480px for very small screens */
       @media (max-width: 480px) {
         .logo {
           width: 60px;
@@ -564,11 +573,11 @@
   <body>
     <div class="main-container">
       <!-- Navigation -->
-      <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <nav class="navbar" role="navigation" aria-label="主导航">
         <div class="navbar-content">
-          <img src="cda-logo.png" alt="CDA Logo" class="logo" width="120" height="120">
+          <img src="cda-logo.png" alt="CDA标志" class="logo" width="120" height="120">
 
-          <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <button class="hamburger" id="hamburger" aria-label="菜单" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
@@ -576,10 +585,10 @@
 
           <ul class="nav-links" id="navLinks">
             <li><a href="#about" class="nav-link">关于我们</a></li>
-            <li><a href="#services" class="nav-link">服务项目</a></li>
+            <li><a href="#services" class="nav-link">服务</a></li>
             <li><a href="#testimonials" class="nav-link">学员评价</a></li>
             <li><a href="#contact" class="nav-link">联系我们</a></li>
-            <li><a href="index.html" class="nav-link">EN</a></li>
+            <li><a href="index.html" class="nav-link">English</a></li>
           </ul>
         </div>
       </nav>
@@ -587,7 +596,7 @@
       <!-- Hero -->
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-content">
-          <h1 id="hero-title">安省认证驾驶学校</h1>
+          <h1 id="hero-title">MTO认证驾校</h1>
           <div class="button-container">
             <a href="#contact" class="button">
               预约课程
@@ -605,13 +614,12 @@
       <section class="section" aria-labelledby="why-choose-us">
         <h2 id="why-choose-us">为什么选择我们？</h2>
         <ul>
-          <li>✅ 仅提供自动挡车辆 → 学车更轻松</li>
-          <li>📍 KW 地区可接送 → 上门接送更方便</li>
-          <li>💳 安省 MTO 认证 → 可享保险优惠</li>
-          <li>👨🏫 一对一私教课程 → 按你的节奏教学</li>
-          <li>⏰ 时间灵活 → 配合你的日程</li>
-          <li>🏆 驾校协会认证 → 更值得信赖</li>
-          <li>🚘 路考可提供车辆 → 用熟悉车辆更安心</li>
+          <li>✅ 仅提供自动挡汽车 → 无需担心手动挡！</li>
+          <li>📍 滑铁卢地区免费接送 → 上门服务</li>
+          <li>💳 MTO认证 = 保险折扣 → 省钱！</li>
+          <li>👨🏫 一对一私人教学 → 按您的节奏学习</li>
+          <li>⏰ 灵活时间安排 → 配合您的时间表！</li>
+          <li>🚘 路考提供车辆 → 使用您的学车车辆考试</li>
         </ul>
       </section>
 
@@ -619,36 +627,36 @@
 
       <!-- Services -->
       <section class="section1" id="services" aria-labelledby="services-title">
-        <h2 id="services-title">服务项目</h2>
+        <h2 id="services-title">服务</h2>
         <div class="container3">
           <div class="grid-item">
-            <h3>实车课程</h3>
+            <h3>车内培训</h3>
             <ul>
               <li>G2：<b>$60/小时</b></li>
-              <li>G 牌课程</li>
-              <ul>
+              <li>G牌课程</li>
+              <ul style="margin-left: 20px;">
                 <li>老学员：<b>$60/小时</b></li>
                 <li>新学员：<b>$70/小时</b></li>
               </ul>
             </ul>
           </div>
-
           <div class="grid-item">
             <h3>路考服务 ($220)</h3>
             <ul>
-              <li><b>60 分钟</b> 考前练车</li>
-              <li>路考当天提供考试车辆</li>
+              <li><b>60分钟</b> 车内课程</li>
+              <li>路考车辆租赁</li>
             </ul>
+            <p>
+            </p>
           </div>
-
           <div class="grid-item">
-            <h3>完整课程（$820）</h3>
+            <h3>全套课程 ($820)</h3>
             <ul>
-              <li><b>10 小时</b> 练车</li>
-              <li><b>10 小时</b> Homelink</li>
-              <li><b>20 小时</b> 在线课程</li>
-              <li>一对一实车教学</li>
-              <li>KW 地区免费接送</li>
+              <li><b>10小时</b> 车内培训</li>
+              <li><b>10小时</b> 家庭联系</li>
+              <li><b>20小时</b> 在线学习</li>
+              <li>一对一车内培训</li>
+              <li>滑铁卢地区免费接送</li>
             </ul>
           </div>
         </div>
@@ -664,11 +672,9 @@
           <div class="testimonial-slide active" data-slide="0">
             <div class="quote-open">“</div>
             <p class="testimonial-text">
-              Really enjoyed my time here with CDA driving instructor.
-              They explain everything with a lot of detail, very hard to
-              get confused but very easy to gain great success. Thanks to
-              them I have my license without any mistakes or accidents.
-              Thank you Canadian Driving Academy.
+              非常喜欢在加拿大驾驶学院的学习时光。教练讲解非常详细，
+              很难让人困惑，而且非常容易取得好成绩。多亏了他们，
+              我一次性通过考试，没有任何失误。谢谢加拿大驾驶学院。
             </p>
             <div class="quote-close">”</div>
             <div class="testimonial-author">- Yusuf Noorrah</div>
@@ -677,7 +683,7 @@
           <div class="testimonial-slide" data-slide="1">
             <div class="quote-open">“</div>
             <p class="testimonial-text">
-              Thank you so much for all the patience and great guidance during my driving lessons. You made driving fun and easy to learn, and all the tips and tricks you gave me were very helpful. From the first lesson I knew you had every students' best interest and you made every minute count. Now I have more confidence on the road, all thanks to you.
+              非常感谢您在驾驶课程中的耐心和出色指导。您让驾驶变得有趣且容易学习，您给我的所有提示和技巧都非常有帮助。从第一节课我就知道您把每个学生的最佳利益放在心上，并且让每一分钟都很有价值。现在我在路上更有信心了，这都归功于您。
             </p>
             <div class="quote-close">”</div>
             <div class="testimonial-author">- Olivia</div>
@@ -686,15 +692,15 @@
           <div class="testimonial-slide" data-slide="2">
             <div class="quote-open">“</div>
             <p class="testimonial-text">
-              William took his G2 test to day HE PASSED... WHO HOOO.. I thank you guys very much for providing awesome in class and in car driving has been the best for teaching both my boys behind the wheel. I am very pleased and i would certainly recommend Canadian Driving Academy to anyone.
+              威廉今天参加了G2考试，他通过了...太棒了！非常感谢你们，你们的课堂教学和车内教学都是教我的孩子们开车的最佳选择。我非常满意，肯定会向任何人推荐加拿大驾驶学院。
             </p>
             <div class="quote-close">”</div>
-            <div class="testimonial-author">- William.</div>
+            <div class="testimonial-author">- William</div>
           </div>
 
           <!-- Single set of arrows -->
-          <button class="arrow left" aria-label="Previous testimonial">‹</button>
-          <button class="arrow right" aria-label="Next testimonial">›</button>
+          <button class="arrow left" aria-label="上一条评价">‹</button>
+          <button class="arrow right" aria-label="下一条评价">›</button>
         </div>
       </section>
 
@@ -711,11 +717,10 @@
 
           <div class="about-text">
             <p>
-              Canadian Driving Academy 提供安省认证的驾驶教育课程。我们的教练经验丰富、耐心细致，
-              教学清晰专业，帮助学员更快建立自信、安全上路。
+              加拿大驾驶学院为所有学生提供交通部认证的驾驶教育课程。我们为学员提供经验丰富、耐心、专业且知识渊博的教练。
             </p>
             <p>
-              我们将帮助你养成安全驾驶习惯，掌握防御性驾驶技巧，为长期安全驾驶打下坚实基础。
+              我们的教练将为您的一生安全驾驶做好准备，确保您有信心进行防御性驾驶和负责任地驾驶。
             </p>
           </div>
         </div>
@@ -729,19 +734,20 @@
 
         <div class="contact-content">
           <div class="contact-text">
-            <p><b>邮箱：</b>
+           <p style="display: flex; align-items: center; padding-bottom: 2px;"><img src="mail-icon.svg" style="width: 26px; display: inline; align: center; padding-right: 5px;" alt="邮件图标"><b> 电子邮件： </b>&nbsp;
               <a href="mailto:Canadiandrivingacademy@gmail.com">Canadiandrivingacademy@gmail.com</a>
             </p>
-            <p><b>电话：</b> <a href="tel:+12266000836">226-600-0836</a> (工作时间最好发短信)</p>
-            <p><b>微信：</b> CanadianDA</p>
+            <p style="display: flex; align-items: center; padding-bottom: 2px;"><img src="text-icon.svg" style="width: 26px; display: inline; align: center; padding-right: 5px;" alt="短信图标"><b> 短信： </b>&nbsp; <a href="sms:+12266000836">226-600-0836</a> — 工作时间最佳</p>
+            <p style="display: flex; align-items: center; padding-bottom: 2px;"><img src="call-icon.svg" style="width: 26px; display: inline; align: center; padding-right: 5px;" alt="电话图标"><b> 电话： </b>&nbsp; <a href="tel:+12266000836">226-600-0836</a> — 晚间</p>
+            <p style="display: flex; align-items: center; padding-bottom: 2px;"><img src="wechat-icon.svg" style="width: 29px; display: inline; align: center; padding-right: 5px;" alt="微信图标"><b> 微信号： </b>&nbsp;CanadianDA</p>
 
             <a href="mailto:Canadiandrivingacademy@gmail.com" class="button">
-              邮件咨询
+              预约课程
             </a>
           </div>
 
           <div class="contact-image">
-            <img src="contact-us.jpeg" alt="驾驶中">
+            <img src="contact-us.jpeg" alt="驾驶中的人">
           </div>
         </div>
       </section>
@@ -756,8 +762,13 @@
       let currentSlide = 0;
 
       function showSlide(index) {
+        // Hide all slides
         slides.forEach(slide => slide.classList.remove('active'));
+        
+        // Show current slide
         slides[index].classList.add('active');
+        
+        // Update current slide tracker
         currentSlide = index;
       }
 
@@ -771,9 +782,11 @@
         showSlide(currentSlide);
       }
 
+      // Arrow click handlers
       leftArrow.addEventListener('click', previousSlide);
       rightArrow.addEventListener('click', nextSlide);
 
+      // Keyboard navigation
       document.addEventListener('keydown', function(e) {
         if (e.key === 'ArrowLeft') {
           previousSlide();
@@ -804,11 +817,13 @@
         toggleMenu();
       });
 
+      // Close menu when clicking a nav link
       const links = document.querySelectorAll("#navLinks a");
       links.forEach(function (link) {
         link.addEventListener("click", closeMenu);
       });
 
+      // Close menu when clicking outside
       document.addEventListener("click", function (e) {
         const clickedInsideNavbar = e.target.closest(".navbar");
         if (!clickedInsideNavbar && navLinks.classList.contains("open")) {
@@ -816,13 +831,14 @@
         }
       });
 
+      // Close menu on Escape key
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape" && navLinks.classList.contains("open")) {
           closeMenu();
         }
       });
 
-      // Handle window resize - UPDATED BREAKPOINT
+      // Handle window resize
       window.addEventListener('resize', function() {
         if (window.innerWidth > 1024 && navLinks.classList.contains('open')) {
           closeMenu();
